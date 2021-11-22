@@ -1,13 +1,3 @@
-# Файл с настройками для редактора.
-#
-# Если вы разрабатываете в редакторе WebStorm, BBEdit, Coda или SourceLair
-# этот файл уже поддерживается и не нужно производить никаких дополнительных
-# действий.
-#
-# Если вы ведёте разработку в другом редакторе, зайдите
-# на https://editorconfig.org и в разделе «Download a Plugin»
-# скачайте дополнение для вашего редактора.
-
 root = true
 
 [*]
@@ -17,6 +7,13 @@ indent_size = 2
 indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.{json,md}]
+indent_size = 2
+trim_trailing_whitespace = false
+
+[*.{go,py,rb,php}]
+indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = false

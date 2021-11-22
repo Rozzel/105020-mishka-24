@@ -1,7 +1,7 @@
 # Личный проект «Мишка» 
 
-* Студент: [Владислав Голик](https://up.htmlacademy.ru/adaptive/24/user/105020).
-* Наставник: `Неизвестно`.
+* Студент: [Владислав Голик](https://htmlacademy.ru/profile/id105020).
+* Наставник: [Анастасия Ничипорчук](https://htmlacademy.ru/profile/id612797).
 
 ---
 
