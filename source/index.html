@@ -35,11 +35,9 @@
 
     <section class="catalog-sections">
 
-      <div class="catalog-sections__wrapper">
-        <header class="catalog-sections__header">
-          <h2 class="catalog-sections__title">Милые штуки ручной работы для дома</h2>
-        </header>
-      </div>
+      <header class="catalog-sections__wrapper">
+        <h2 class="catalog-sections__title">Милые штуки ручной работы для дома</h2>
+      </header>
 
       <ul class="catalog-sections__list">
         <li class="catalog-sections__item"><a href="#">Предметы интерьера</a></li>
@@ -51,8 +49,8 @@
     <section class="product-week">
       <div class="product-week__wrapper">
 
-        <h2 class="product-week__title">Товар недели</h2>
-        <p class="product-week__product-title">Вязаные корзинки</p>
+        <p class="product-week__title">Товар недели</p>
+        <h2 class="product-week__product-title">Вязаные корзинки</h2>
         <p class="product-week__product-text">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.</p>
 
         <dl class="product-week__specifications">
@@ -73,20 +71,22 @@
 
       <p class="product-week__price">Цена: 990 руб.</p>
 
-      <button class="product-week__order" type="button">Заказать</button>
+      <a class="product-week__button button" href="#">Заказать</a>
 
     </section>
 
     <section class="about">
-      <h2 class="about__title">Коротко о нас:</h2>
-      <ul class="about__list">
-        <li class="abaut__item">Экологически<br> чистые материалы</li>
-        <li class="abaut__item">Скандинавский стиль<br> по российской цене</li>
-        <li class="abaut__item">Увеличивает лайки<br> на фотографиях</li>
-        <li class="abaut__item">Связано вручную с любовью и умилением</li>
-        <li class="abaut__item">Поддержка отечественного<br> производителя</li>
-        <li class="abaut__item">Поставляется<br> в подарочной упаковке</li>
-      </ul>
+      <div class="about__wrapper">
+        <h2 class="about__title">Коротко о нас:</h2>
+        <ul class="about__list">
+          <li class="abaut__item">Экологически<br> чистые материалы</li>
+          <li class="abaut__item">Скандинавский стиль<br> по российской цене</li>
+          <li class="abaut__item">Увеличивает лайки<br> на фотографиях</li>
+          <li class="abaut__item">Связано вручную с любовью и умилением</li>
+          <li class="abaut__item">Поддержка отечественного<br> производителя</li>
+          <li class="abaut__item">Поставляется<br> в подарочной упаковке</li>
+        </ul>
+      </div>
     </section>
 
     <section class="reviews">
@@ -137,15 +137,17 @@
     <section class="contacts">
       <h2 class="contacts__title">Контакты</h2>
       <p class="contacts__data">
-        <span class="span contact__label">e-mail:</span>
+        <span class="contact__label">e-mail:</span>
         <span class="contact__material"><a href="mailto:info@mimimishkashop.ru" class="contact__link">info@mimimishkashop.ru</a></span>
       </p>
       <p class="contacts__data">
-        <span class="span contact__label">адрес:</span>
-        <span class="contact__material"><a href="#" class="contact__link" target="_blank">г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101</a></span>
+        <span class="contact__label">адрес:</span>
+        <span class="contact__material">г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101</span>
       </p>
 
-      <button class="contact__button button">Напишите нам</button>
+      <div class="contacts__map map"></div>
+
+      <a class="contact__button button" href="#">Напишите нам</a>
 
     </section>
 
