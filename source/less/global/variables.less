@@ -1,0 +1,39 @@
+// font
+@font-name: "Open Sans";
+@specify-families: sans-serif;
+@font-url: opensans;
+@font-url--bold: opensansbold;
+
+// color
+@base-color: #000000;
+@base-color--lighten: lighten(@base-color, 26.5%);
+@base-color--invert: #ffffff;
+
+@brand-color--1: #63d1bb;
+@brand-color--2: #56c3b2;
+@brand-color--3: #62d1ba;
+@brand-color--4: #6bc6b3;
+@brand-color--5: #46c1ae;
+
+// backgroundColor
+@bg-color: @base-color--invert;
+
+// titelColor
+@titel-color: @base-color;
+@titel-color--lighten: lighten(@titel-color, 100%);
+@titel-color--brand: @brand-color--1;
+
+// link
+@link-color: @base-color;
+@link-color--hover: rgba(@link-color, 0.6);
+@link-color--down: rgba(@link-color, 0.3);
+
+// textColor
+@text-color: @base-color--lighten;
+@text-color--lighten: lighten(@text-color, 100%);
+
+// footer
+@foorer-color: @base-color;
+@foorer-color-main: @brand-color--1;
+@foorer-color--hover: @brand-color--5;
+@foorer-color--down: rgba(@brand-color--5, 0.3);
