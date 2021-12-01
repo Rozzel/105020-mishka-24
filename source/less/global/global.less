@@ -1,4 +1,24 @@
 body {
   background-color: @bg-color;
-  .font-global(@font-name);
+}
+
+// start temporaryStyles
+header,
+main,
+footer {
+  outline: 1px solid @brand-color--1;
+}
+
+section {
+  outline: 1px solid #f8a614;
+  outline-offset: -1px;
+}
+// temporaryStyles end
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }

@@ -1,6 +1,7 @@
 .font(@font; @src; @font-weight: normal; @font-style: normal) {
   font-family: "@{font}";
-  src: url("fonts/@{src}.woff2") format("woff2"), url("fonts/@{src}.woff2") format("woff");
+  src: url("fonts/@{src}.woff2") format("woff2"),
+    url("fonts/@{src}.woff") format("woff");
   font-weight: @font-weight;
   font-style: @font-style;
   font-display: swap;
@@ -10,4 +11,19 @@
   font-family: @font, @specify-families;
   font-style: normal;
   font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  color: @text-color;
+}
+
+.font-text(@font-weight: inherit; @font-size: inherit; @line-height: inherit; @color: inherit; @font-style: normal) {
+  font-weight: @font-weight;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+  font-style: @font-style;
+}
+
+.screen-size(@size) {
+  max-width: @size;
 }
