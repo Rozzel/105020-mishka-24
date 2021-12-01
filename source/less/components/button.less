@@ -1,3 +1,9 @@
 .button {
-  background-color: rgb(255, 99, 71);
+  display: inline-block;
+  background-color: @base-color--invert;
+  text-decoration: none;
+  padding: 16px 70px;
+  border: 2px solid @base-color--lighten;
+  .font-text(700; 18px; 20px; @base-color--lighten);
+  text-transform: uppercase;
 }
