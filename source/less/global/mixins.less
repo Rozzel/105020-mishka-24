@@ -16,12 +16,11 @@
   color: @base-color--lighten;
 }
 
-.font-text(@font-weight: inherit; @font-size: inherit; @line-height: inherit; @color: inherit; @font-style: normal) {
+.font-text(@font-weight: inherit; @font-size: inherit; @line-height: inherit; @color: inherit) {
   font-weight: @font-weight;
   font-size: @font-size;
   line-height: @line-height;
   color: @color;
-  font-style: @font-style;
 }
 
 .screen(@size) {
@@ -32,4 +31,10 @@
 .size(@width; @height) {
   width: @width;
   height: @height;
+}
+
+.button-m() {
+  width: @mobile-size;
+  padding: 16px 0;
+  text-align: center;
 }
