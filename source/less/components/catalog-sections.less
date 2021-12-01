@@ -1,12 +1,61 @@
 .catalog-sections {
-  background: #fcfcfc url("img/background/hero-mobile.jpg") no-repeat top center;
-  .screen(@mobile-size);
+  width: 100%;
+  background: url("/img/background/hero-mobile-bg.png");
 }
 
 .catalog-sections__wrapper {
   padding-top: 90px;
+  background: url("/img/background/hero-mobile.jpg") no-repeat top center;
 }
 
 .catalog-sections__title {
   .font-text(700; 27px; 30px; @base-color);
+  .screen(@mobile-size);
+  margin-bottom: 150px;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.catalog-sections__link {
+  .font-text(700; 19px; 24px; @base-color--invert);
+  text-decoration: none;
+  min-width: @mobile-size;
+}
+
+.catalog-sections__link-wrapper {
+  width: 100%;
+  background-color: @brand-color--1;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 31px;
+
+  &--first {
+    background-color: @brand-color--1;
+  }
+
+  &--last {
+    background-color: @brand-color--2;
+  }
+}
+
+.catalog-sections__link-content {
+  display: flex;
+}
+
+.catalog-sections__link-content::after {
+  content: "";
+  margin-left: 84px;
+}
+
+.catalog-sections__link-wrapper--first .catalog-sections__link-content::after {
+  background: url("/img/icon/interior.svg") no-repeat;
+  .size(40px; 62px);
+}
+
+.catalog-sections__link-wrapper--last .catalog-sections__link-content::after {
+  background: url("/img/icon/cube.svg") no-repeat;
+  .size(60px; 60px);
 }

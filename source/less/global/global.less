@@ -1,7 +1,3 @@
-body {
-  background-color: @bg-color;
-}
-
 // start temporaryStyles
 header,
 main,
@@ -10,10 +6,18 @@ footer {
 }
 
 section {
-  outline: 1px solid #f8a614;
+  outline: 1px solid #ffd181;
   outline-offset: -1px;
 }
+
+div[class*="__wrapper"] {
+  outline: 1px solid #ff9def;
+}
 // temporaryStyles end
+
+body {
+  background-color: @bg-color;
+}
 
 .visually-hidden {
   position: absolute;
