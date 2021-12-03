@@ -26,18 +26,33 @@
 
 .catalog-sections__link-wrapper {
   width: 100%;
-  background-color: @brand-color--1;
   display: flex;
   justify-content: center;
   padding-top: 24px;
   padding-bottom: 31px;
+}
 
-  &--first {
+.catalog-sections__list {
+  .indent(list);
+}
+
+.catalog-sections__item {
+  &:first-child .catalog-sections__link-wrapper {
     background-color: @brand-color--1;
   }
 
-  &--last {
+  &:first-child .catalog-sections__link-content::after {
+    background: url("/img/icon/interior.svg") no-repeat;
+    .size(40px; 62px);
+  }
+
+  &:last-child .catalog-sections__link-wrapper {
     background-color: @brand-color--2;
+  }
+
+  &:last-child .catalog-sections__link-content::after {
+    background: url("/img/icon/cube.svg") no-repeat;
+    .size(60px; 60px);
   }
 }
 
@@ -48,14 +63,4 @@
 .catalog-sections__link-content::after {
   content: "";
   margin-left: 84px;
-}
-
-.catalog-sections__link-wrapper--first .catalog-sections__link-content::after {
-  background: url("/img/icon/interior.svg") no-repeat;
-  .size(40px; 62px);
-}
-
-.catalog-sections__link-wrapper--last .catalog-sections__link-content::after {
-  background: url("/img/icon/cube.svg") no-repeat;
-  .size(60px; 60px);
 }
