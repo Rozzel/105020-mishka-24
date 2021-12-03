@@ -1,0 +1,19 @@
+.main-nav {
+  display: flex;
+}
+
+.main-nav__wrapper {
+  @media (max-width: @mobile-width-only) {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  .indent(list);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-list__item {
+  padding: 3px;
+}

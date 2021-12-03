@@ -4,9 +4,12 @@
 }
 
 .page-header__wrapper {
-  .screen(@mobile-size);
-  margin-top: 22px;
-  margin-bottom: 22px;
   display: flex;
   justify-content: center;
+  padding: 22px 30px;
+
+  @media (min-width: @tablet-width) {
+    .screen(@tablet-size);
+    justify-content: space-between;
+  }
 }
