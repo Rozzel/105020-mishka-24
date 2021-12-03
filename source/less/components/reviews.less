@@ -1,0 +1,38 @@
+.reviews {
+  width: 100%;
+}
+
+.reviews__wrapper {
+  .screen(@mobile-size);
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__title {
+  .font-text(700; 25px; 30px; @base-color);
+  margin-bottom: 14px;
+}
+
+.reviews__write-button {
+  order: 1;
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__text {
+  .font-text(normal; 15px; 30px; @base-color--lighten);
+  margin-bottom: 33px;
+}
+
+.reviews__author-name {
+  order: 1;
+  .font-text(700; 17px; 30px; @base-color );
+}
+
+.reviews__author-contact {
+  order: 2;
+  margin-bottom: 30px;
+}

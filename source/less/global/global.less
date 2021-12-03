@@ -1,0 +1,28 @@
+// start temporaryStyles
+header,
+main,
+footer {
+  outline: 1px solid @brand-color--1;
+}
+
+section {
+  outline: 1px solid #ffd181;
+  outline-offset: -1px;
+}
+
+div[class*="__wrapper"] {
+  outline: 1px solid #ff9def;
+}
+// end temporaryStyles
+
+body {
+  background-color: @bg-color;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}

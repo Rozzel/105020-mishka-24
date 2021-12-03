@@ -1,0 +1,52 @@
+.font(@font; @src; @font-weight: normal; @font-style: normal) {
+  font-family: "@{font}";
+  src: url("fonts/@{src}.woff2") format("woff2"),
+    url("fonts/@{src}.woff") format("woff");
+  font-weight: @font-weight;
+  font-style: @font-style;
+  font-display: swap;
+}
+
+.font-global(@font) {
+  font-family: @font, @specify-families;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  color: @base-color--lighten;
+}
+
+.font-text(@font-weight: inherit; @font-size: inherit; @line-height: inherit; @color: inherit) {
+  font-weight: @font-weight;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+}
+
+.screen(@size) {
+  max-width: @size;
+  margin: 0 auto;
+}
+
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.button-m() {
+  width: @mobile-size - 4;
+  padding: 16px 0;
+  text-align: center;
+}
+
+// start indent
+.indent() {
+  margin: 0;
+  padding: 0;
+}
+
+.indent(list) {
+  .indent();
+  list-style-type: none;
+}
+// end indent
