@@ -1,11 +1,23 @@
 .about {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .about__wrapper {
   padding-top: 31px;
+  .mobile-width();
   padding-bottom: 15px;
-  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-size;
+  }
 }
 
 .about__title {
@@ -20,4 +32,9 @@
 
 .about__list {
   .indent(list);
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

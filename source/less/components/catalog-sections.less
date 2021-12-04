@@ -4,14 +4,21 @@
 }
 
 .catalog-sections__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 90px;
   background: url("/img/background/hero-mobile.jpg") no-repeat top center;
+  min-height: 445px;
+
+  @media (min-width: @tablet-width) {
+    min-height: 340px;
+  }
 }
 
 .catalog-sections__title {
   .font-text(700; 27px; 30px; @base-color);
   margin: 0 auto;
-  margin-bottom: 150px;
 
   &--center {
     text-align: center;
@@ -33,9 +40,16 @@
 
 .catalog-sections__list {
   .indent(list);
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .catalog-sections__item {
+  flex-grow: 1;
+
   &:first-child .catalog-sections__link-wrapper {
     background-color: @brand-color--1;
   }

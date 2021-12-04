@@ -1,11 +1,21 @@
 .reviews {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .reviews__wrapper {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  .mobile-width();
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-size
+  }
 }
 
 .reviews__title {
@@ -13,8 +23,13 @@
   margin-bottom: 14px;
 }
 
+.reviews__item {
+  .indent();
+}
+
 .reviews__write-button {
   order: 1;
+  margin: 0 auto;
 }
 
 .reviews__author-info {
