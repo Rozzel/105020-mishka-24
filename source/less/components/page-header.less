@@ -1,5 +1,5 @@
 .page-header {
-  background-color: @bg-color;
+  background-color: @base-color--invert;
   width: 100%;
 }
 
@@ -9,7 +9,11 @@
   padding: 22px 30px;
 
   @media (min-width: @tablet-width) {
-    .screen(@tablet-size);
     justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    align-items: center;
+    flex-direction: column;
   }
 }

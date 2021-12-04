@@ -3,7 +3,23 @@
 }
 
 .main-nav__wrapper {
-  @media (max-width: @mobile-width-only) {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
+}
+
+.main-nav__toggle {
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+
+  @media (min-width: @desktop-width) {
     display: none;
   }
 }
@@ -12,8 +28,12 @@
   .indent(list);
   display: flex;
   flex-wrap: wrap;
+
+  @media (min-width: @desktop-width) {
+    justify-content: space-between;
+  }
 }
 
-.site-list__item {
+.main-nav__item {
   padding: 3px;
 }
