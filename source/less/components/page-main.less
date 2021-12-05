@@ -1,13 +1,29 @@
 .page-main__title {
+  display: flex;
+  justify-content: center;
   width: 100%;
   background-color: @base-color--1;
 }
 
 .page-main__title-wrapper {
-  margin: 0 auto;
-  padding: 74px 0;
+  padding: 75px 0;
+  .mobile-width();
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 100px;
+    width: 100%;
+  }
 }
 
 .page-main__heading {
   .font-text(700; 27px; 30px; @base-color);
+
+  @media (min-width: @tablet-width) {
+    .font-text(700; 43px; 50px; @base-color);
+  }
+
+  @media (min-width: @desktop-width) {
+    .font-text(700; 53px; 57px; @base-color);
+  }
 }

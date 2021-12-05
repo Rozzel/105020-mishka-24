@@ -1,9 +1,10 @@
 .catalog {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .catalog__wrapper {
-  margin: 0 auto;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -23,14 +24,17 @@
 .catalog__product-name {
   order: 1;
   .font-text(700; 17px; 24px; @base-color);
+  .indent();
   margin-left: 28px;
 }
 
 .catalog__image {
+  margin: 0 auto;
   margin-bottom: 29px;
 }
 
 .catalog__specifications {
+  .indent();
   margin-left: 28px;
   .font-text(400; 13px; 30px; @base-color--lighten);
   margin-bottom: 41px;
