@@ -1,7 +1,32 @@
 .page-footer {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: @base-color--1;
 }
 
 .page-footer__wrapper {
-  .screen(@mobile-size);
+  .mobile-width();
+
+  @media (min-width: @tablet-size) {
+    display: flex;
+    width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-size) {
+    width: @desktop-size;
+  }
+}
+
+.page-footer__logo {
+  display: none;
+
+  @media (min-width: @tablet-size) {
+    padding: 30px 0;
+    display: block;
+  }
+}
+
+.page-footer__logo-wrapper {
+  display: flex;
 }

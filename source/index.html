@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Интернет-магазин ручных изделий для дома: Мишка</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
@@ -10,7 +11,7 @@
 
 <body class="page__body">
 
-  <header class="page-header">
+  <header class="page__header page-header">
     <div class="page-header__wrapper">
       <a class="page-header__logo-link">
         <img class="page-header__logo" width="86" height="35" src="/img/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
@@ -18,11 +19,11 @@
       <nav class="page-header__nav main-nav">
         <button class="main-nav__toggle" aria-label="Открыть меню"></button>
         <div class="main-nav__wrapper">
-          <ul class="main-nav__list site-list visually-hidden">
-            <li class="site-list__item"><a href="catalog.html">Каталог товаров</a></li>
-            <li class="site-list__item"><a href="form.html">Вязание на заказ</a></li>
-            <li class="site-list__item"><a href="#">Поиск по сайту</a></li>
-            <li class="site-list__item"><a href="#">Корзина: пока пуста</a></li>
+          <ul class="main-nav__list site-list">
+            <li class="main-nav__item site-list__item"><a href="catalog.html">Каталог товаров</a></li>
+            <li class="main-nav__item site-list__item"><a href="form.html">Вязание на заказ</a></li>
+            <li class="main-nav__item site-list__item"><a href="#">Поиск по сайту</a></li>
+            <li class="main-nav__item site-list__item"><a href="#">Корзина: пока пуста</a></li>
           </ul>
         </div>
       </nav>
@@ -42,7 +43,7 @@
         <ul class="catalog-sections__list">
           <li class="catalog-sections__item">
             <a href="#" class="catalog-sections__link">
-              <div class="catalog-sections__link-wrapper catalog-sections__link-wrapper--first">
+              <div class="catalog-sections__link-wrapper">
                 <div class="catalog-sections__link-content">Предметы<br> интерьера</div>
               </div>
             </a>
@@ -50,7 +51,7 @@
 
           <li class="catalog-sections__item">
             <a href="#" class="catalog-sections__link">
-              <div class="catalog-sections__link-wrapper catalog-sections__link-wrapper--last">
+              <div class="catalog-sections__link-wrapper">
                 <div class="catalog-sections__link-content">Детские<br> игрушки</div>
               </div>
             </a>
@@ -66,7 +67,12 @@
         <p class="product-week__title">Товар недели</p>
         <h2 class="product-week__product-title">Вязаные корзинки</h2>
         <div class="product-week__images"><img src="img/catalog/triple-mobile.jpg" alt="Вязаные корзинки" width="260" height="315"></div>
-        <p class="product-week__product-text">Экологически чистая пряжа,<br> ручная работа. Доступны в шести<br> расцветках и трёх размерах.</p>
+        <p class="product-week__product-text">
+          Экологически чистая пряжа,<br> ручная работа. Доступны в шести<br> расцветках и трёх размерах.
+          Экологически чистая пручная работа. Доступны в шцветках и трёх размерах.
+          Экологически чистая ная работа. Доступны в шесрасцветках и трёх размерах.
+          Экологически чистая пая работа. Доступны в шцветках и трёх размерах.
+        </p>
 
         <dl class="product-week__specifications">
 
@@ -158,19 +164,30 @@
             <a href="mailto:info@mimimishkashop.ru" class="contacts__link">info@mimimishkashop.ru</a>
           </span>
           <span>адрес:</span>
-          <span>г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101</span>
+          <span class="contacts__data-address">г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101</span>
         </p>
-
-        <div class="contacts__map map"></div>
-
-        <a class="contact__button button" href="#">Напишите нам</a>
       </div>
+
+      <div class="contacts__map map">
+        <div class="map__wrapper"></div>
+      </div>
+
+      <a class="contact__button button" href="#">Напишите нам</a>
+
     </section>
 
   </main>
 
-  <footer class="page-footer">
+  <footer class="page__footer page-footer">
     <div class="page-footer__wrapper">
+
+      <div class="page-footer__logo">
+        <div class="page-footer__logo-wrapper">
+          <a class="page-header__logo-link" href="index.html">
+            <img class="page-header__logo" width="86" height="35" src="/img/icon/logo-footer.svg" alt="Логотип интернет-магазин: Мишка">
+          </a>
+        </div>
+      </div>
 
       <div class="page-footer__social social">
         <div class="social__wrapper">

@@ -1,11 +1,34 @@
 .contacts {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    ". w ."
+    "m m m"
+    ". b .";
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "w m"
+      "w m"
+      "b m";
+  }
 }
 
 .contacts__wrapper {
-  .screen(@mobile-size);
-  padding-top: 38px;
-  padding-bottom: 38px;
+  display: grid;
+  .mobile-width();
+  padding-top: 30px;
+  grid-area: w;
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 400px;
+  }
 }
 
 .contacts__title {
@@ -18,8 +41,24 @@
   grid-template-columns: 1fr 2fr;
   column-gap: 1px;
   row-gap: 20px;
-  margin-bottom: 62px;
   .font-text(400; 14px; 30px);
+  margin-bottom: 62px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: repeat(2, 1fr 2fr);
+    width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: 1fr 2fr;
+    width: @tablet-size;
+  }
+}
+
+.contacts__data-address {
+  @media (min-width: @tablet-width) {
+    width: 257px;
+  }
 }
 
 .contacts__link {
@@ -29,8 +68,13 @@
 
 .contacts__map {
   margin-bottom: 42px;
+  grid-area: m;
 }
 
 .contact__button {
-  .button-m();
+  padding: 16px 27px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  grid-area: b;
 }

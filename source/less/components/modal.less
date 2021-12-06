@@ -1,5 +1,7 @@
 .modal {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .modal--close {
@@ -7,7 +9,11 @@
 }
 
 .modal__wrapper {
-  .screen(@mobile-size);
+  .mobile-width();
+
+  @media (min-width: @tablet-width) {
+    width: 556px;
+  }
 }
 
 .modal__content {
@@ -21,6 +27,7 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 14px;
+  width: 165px;
 }
 
 .modal__text {

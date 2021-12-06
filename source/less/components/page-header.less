@@ -1,12 +1,19 @@
 .page-header {
-  background-color: @bg-color;
+  background-color: @base-color--invert;
   width: 100%;
 }
 
 .page-header__wrapper {
-  .screen(@mobile-size);
-  margin-top: 22px;
-  margin-bottom: 22px;
   display: flex;
   justify-content: center;
+  padding: 22px 30px;
+
+  @media (min-width: @tablet-width) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    align-items: center;
+    flex-direction: column;
+  }
 }

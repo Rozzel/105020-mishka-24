@@ -23,18 +23,12 @@
   color: @color;
 }
 
-.screen(@size) {
-  max-width: @size;
-  margin: 0 auto;
-}
-
 .size(@width; @height) {
   width: @width;
   height: @height;
 }
 
 .button-m() {
-  width: @mobile-size - 4;
   padding: 16px 0;
   text-align: center;
 }
@@ -50,3 +44,9 @@
   list-style-type: none;
 }
 // end indent
+
+.mobile-width(@width: @mobile-size; @padding: 30px) {
+  width: @width;
+  padding-left: @padding;
+  padding-right: @padding;
+}
