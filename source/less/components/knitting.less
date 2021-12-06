@@ -3,8 +3,43 @@
 }
 
 .knitting__wrapper {
-  margin: 0 auto;
   padding-top: 17px;
+}
+
+.knitting__wrapper-greeting-text {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 460px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 668px;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 702px;
+  }
+}
+
+.knitting__group {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  max-width: @mobile-size;
+  padding: 0 30;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    max-width: @tablet-size;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: @desktop-size;
+  }
+}
+
+.knitting__group-wrapper-dark {
+  @media (min-width: @tablet-width) {
+    background-color: @base-color--1;
+  }
 }
 
 .knitting__greeting-text {
@@ -12,13 +47,60 @@
   margin-bottom: 29px;
 }
 
+.knitting__input {
+  &--tel,
+  &--email {
+    grid-column: span 2;
+  }
+}
+
+.knitting__textarea {
+  grid-column: span 2;
+}
+
+.knitting__send {
+  margin-bottom: 55px;
+}
+
+.knitting__send-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  .mobile-width();
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-size;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-size;
+  }
+}
+
 .knitting__required-fields {
-  display: block;
   margin-top: 17px;
   margin-bottom: 30px;
 }
 
 .knitting__button {
-  .button-m();
-  margin-bottom: 55px;
+  .font-text(700; 17px; 16px; @base-color--lighten);
+  padding: 18px 0;
+
+  @media (max-width: @mobile-width-only) {
+    width: 100%;
+  }
+
+  @media (min-width: @tablet-width) {
+    order: -1;
+    padding: 18px 32px;
+  }
+
+  @media (min-width: @desktop-width) {
+    order: -1;
+    padding: 18px 17px;
+  }
 }
+
