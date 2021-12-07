@@ -2,18 +2,18 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .catalog__wrapper {
   .size-width(@mobile-size; @mobile-padding);
-  padding-top: 30px;
 
   @media (min-width: @tablet-width) {
-    width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 

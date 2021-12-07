@@ -7,32 +7,30 @@
 }
 
 .knitting__wrapper-greeting-text {
-  padding: 0 30px;
+  .size-width(@mobile-size; @mobile-padding);
   margin: 0 auto;
-  max-width: 460px;
 
   @media (min-width: @tablet-width) {
-    max-width: 668px;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
-    max-width: 702px;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 
 .knitting__group {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  max-width: @mobile-size;
-  padding: 0 30;
+  .size-width(@mobile-size; @mobile-padding);
   margin: 0 auto;
 
   @media (min-width: @tablet-width) {
-    max-width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
-    max-width: @desktop-size;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 
@@ -45,6 +43,14 @@
 .knitting__greeting-text {
   .font-text(400; 13px; 24px);
   margin-bottom: 29px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 670px;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 700px;
+  }
 }
 
 .knitting__input {
