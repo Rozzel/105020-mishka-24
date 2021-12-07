@@ -6,7 +6,9 @@
 
   @media (min-width: @desktop-width) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    margin: 0 auto;
+    .size-width(@desktop-size; @desktop-padding);
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "w m"
       "w m"
@@ -16,12 +18,12 @@
 
 .contacts__wrapper {
   display: grid;
-  .mobile-width();
+  .size-width(@mobile-size; @mobile-padding);
   padding-top: 30px;
   grid-area: w;
 
   @media (min-width: @tablet-width) {
-    width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
@@ -32,6 +34,14 @@
 .contacts__title {
   .font-text(700; 25px; 30px; @base-color);
   margin-bottom: 28px;
+
+  @media (min-width: @tablet-width) {
+    .font-text(700; 43px; 50px; @base-color);
+  }
+
+  @media (min-width: @desktop-width) {
+    .font-text(700; 53px; 57px; @base-color);
+  }
 }
 
 .contacts__data {

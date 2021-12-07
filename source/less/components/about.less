@@ -6,17 +6,17 @@
 
 .about__wrapper {
   padding-top: 31px;
-  .mobile-width();
+  .size-width(@mobile-size; @mobile-padding);
   padding-bottom: 15px;
 
   @media (min-width: @tablet-width) {
     display: flex;
     flex-wrap: wrap;
-    width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 

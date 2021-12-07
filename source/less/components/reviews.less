@@ -2,20 +2,20 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 90px;
 }
 
 .reviews__wrapper {
   display: flex;
   flex-direction: column;
-  .mobile-width();
-  padding-bottom: 90px;
+  .size-width(@mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-width) {
-    width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 

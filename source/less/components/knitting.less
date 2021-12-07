@@ -67,7 +67,7 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  .mobile-width();
+  .size-width(@mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-width) {
     width: @tablet-size;

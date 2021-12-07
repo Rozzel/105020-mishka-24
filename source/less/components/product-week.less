@@ -7,7 +7,7 @@
 .product-week__wrapper {
   display: flex;
   flex-direction: column;
-  .mobile-width();
+  .size-width(@mobile-size; @mobile-padding);
   padding-top: 31px;
 
   @media (min-width: @tablet-width) {
@@ -15,10 +15,11 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+    padding: 0  @tablet-padding;
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 
