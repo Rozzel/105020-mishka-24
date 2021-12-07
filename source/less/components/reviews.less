@@ -14,7 +14,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size
+    width: @desktop-size;
   }
 }
 
@@ -25,6 +25,10 @@
 
 .reviews__item {
   .indent();
+
+  &--off {
+    display: none;
+  }
 }
 
 .reviews__write-button {
