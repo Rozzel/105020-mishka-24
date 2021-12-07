@@ -2,23 +2,24 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-top: 31px;
 }
 
 .product-week__wrapper {
   display: flex;
   flex-direction: column;
-  .mobile-width();
-  padding-top: 31px;
+  .size-width(@mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+    padding: 0  @tablet-padding;
   }
 
   @media (min-width: @desktop-width) {
-    width: @desktop-size
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 

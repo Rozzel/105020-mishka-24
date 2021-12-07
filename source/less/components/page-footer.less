@@ -6,15 +6,15 @@
 }
 
 .page-footer__wrapper {
-  .mobile-width();
+  .size-width(@mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-size) {
     display: flex;
-    width: @tablet-size;
+    .size-width(@tablet-size; @tablet-padding);
   }
 
   @media (min-width: @desktop-size) {
-    width: @desktop-size;
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 

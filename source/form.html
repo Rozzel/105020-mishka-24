@@ -11,16 +11,15 @@
 
 <body class="page__body">
 
-  <header class="page-header">
+  <header class="page__header page-header">
     <div class="page-header__wrapper">
       <a class="page-header__logo-link" href="index.html">
-        <img class="page-header__logo" width="86" height="35" src="/img/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
+        <img class="page-header__logo" width="86" height="35" src="img/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
       </a>
-
       <nav class="page-header__nav main-nav">
         <button class="main-nav__toggle" aria-label="Открыть меню"></button>
         <div class="main-nav__wrapper">
-          <ul class="main-nav__list site-list visually-hidden">
+          <ul class="main-nav__list site-list">
             <li class="main-nav__item site-list__item"><a href="catalog.html">Каталог товаров</a></li>
             <li class="main-nav__item site-list__item"><a>Вязание на заказ</a></li>
             <li class="main-nav__item site-list__item"><a href="#">Поиск по сайту</a></li>
@@ -42,12 +41,13 @@
 
     <section class="knitting">
       <h2 class="visually-hidden">Заполните форму заказа</h2>
+
       <div class="knitting__wrapper">
-
-        <p class="knitting__greeting-text">
-          Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
-        </p>
-
+        <div class="knitting__wrapper-greeting-text">
+          <p class="knitting__greeting-text">
+            Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+          </p>
+        </div>
         <form class="knitting__form" action="https://echo.htmlacademy.ru/" method="POST">
           <fieldset class="knitting__group">
 
@@ -61,30 +61,29 @@
 
           </fieldset>
 
-          <fieldset class="knitting__group">
+          <div class="knitting__group-wrapper-dark">
+            <fieldset class="knitting__group">
+              <legend class="knitting__group-name">Цвет</legend>
 
-            <legend class="knitting__group-name">Цвет</legend>
+              <input class="knitting__input" type="checkbox" id="knitting-color-white" name="knitting-color-white" value="Белый" checked>
+              <label class="knitting__label" for="knitting-color-white">Белый</label>
 
-            <input class="knitting__input" type="checkbox" id="knitting-color-white" name="knitting-color-white" value="Белый" checked>
-            <label class="knitting__label" for="knitting-color-white">Белый</label>
+              <input class="knitting__input" type="checkbox" id="knitting-color-gray" name="knitting-color-gray" value="Серый" checked>
+              <label class="knitting__label" for="knitting-color-gray">Серый</label>
 
-            <input class="knitting__input" type="checkbox" id="knitting-color-gray" name="knitting-color-gray" value="Серый" checked>
-            <label class="knitting__label" for="knitting-color-gray">Серый</label>
+              <input class="knitting__input" type="checkbox" id="knitting-color-tiffany" name="knitting-color-tiffany" value="«Тиффани»">
+              <label class="knitting__label" for="knitting-color-tiffany">«Тиффани»</label>
 
-            <input class="knitting__input" type="checkbox" id="knitting-color-tiffany" name="knitting-color-tiffany" value="«Тиффани»">
-            <label class="knitting__label" for="knitting-color-tiffany">«Тиффани»</label>
+              <input class="knitting__input" type="checkbox" id="knitting-color-black" name="knitting-color-black" value="Черный">
+              <label class="knitting__label" for="knitting-color-black">Черный</label>
 
-            <input class="knitting__input" type="checkbox" id="knitting-color-black" name="knitting-color-black" value="Черный">
-            <label class="knitting__label" for="knitting-color-black">Черный</label>
+              <input class="knitting__input" type="checkbox" id="knitting-color-pink" name="knitting-color-pink" value="Розовый">
+              <label class="knitting__label" for="knitting-color-pink">Розовый</label>
 
-            <input class="knitting__input" type="checkbox" id="knitting-color-pink" name="knitting-color-pink" value="Розовый">
-            <label class="knitting__label" for="knitting-color-pink">Розовый</label>
-
-            <input class="knitting__input" type="checkbox" id="knitting-color-orange" name="knitting-color-orange" value="Оранжевый">
-            <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
-
-          </fieldset>
-
+              <input class="knitting__input" type="checkbox" id="knitting-color-orange" name="knitting-color-orange" value="Оранжевый">
+              <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
+            </fieldset>
+          </div>
           <fieldset class="knitting__group">
 
             <legend class="knitting__group-name">ФИО</legend>
@@ -100,19 +99,23 @@
 
           </fieldset>
 
-          <fieldset class="knitting__group">
+          <div class="knitting__group-wrapper-dark">
+            <fieldset class="knitting__group">
 
-            <legend class="knitting__group-name">Тел</legend>
-            <input class="knitting__input knitting__input--tel" type="tel" id="knitting-tel" name="knitting-tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*" aria-label="Укажите номер телефона" required>
+              <legend class="knitting__group-name">Тел</legend>
+              <input class="knitting__input knitting__input--tel" type="tel" id="knitting-tel" name="knitting-tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*" aria-label="Укажите номер телефона" required>
 
-          </fieldset>
+            </fieldset>
+          </div>
 
-          <fieldset class="knitting__group">
+          <div class="knitting__group-wrapper-dark">
+            <fieldset class="knitting__group">
 
-            <legend class="knitting__group-name">E-mail</legend>
-            <input class="knitting__input knitting__input--email" type="email" id="knitting-email" name="knitting-email" placeholder="Ваш Email*" aria-label="Укажите адрес электронной почты" required>
+              <legend class="knitting__group-name">E-mail</legend>
+              <input class="knitting__input knitting__input--email" type="email" id="knitting-email" name="knitting-email" placeholder="Ваш Email*" aria-label="Укажите адрес электронной почты" required>
 
-          </fieldset>
+            </fieldset>
+          </div>
 
           <fieldset class="knitting__group">
 
@@ -121,10 +124,13 @@
 
           </fieldset>
 
-          <small class="knitting__required-fields">*Поля обязательны для заполнения</small>
+          <div class="knitting__send">
+            <div class="knitting__send-wrapper">
+              <small class="knitting__required-fields">*Поля обязательны для заполнения</small>
 
-          <button class="knitting__button button" type="submit">Отправить заказ</button>
-
+              <button class="knitting__button button" type="submit">Отправить заказ</button>
+            </div>
+          </div>
         </form>
 
       </div>
@@ -132,8 +138,16 @@
 
   </main>
 
-  <footer class="page-footer">
+  <footer class="page__footer page-footer">
     <div class="page-footer__wrapper">
+
+      <div class="page-footer__logo">
+        <div class="page-footer__logo-wrapper">
+          <a class="page-header__logo-link" href="index.html">
+            <img class="page-header__logo" width="86" height="35" src="img/icon/logo-footer.svg" alt="Логотип интернет-магазин: Мишка">
+          </a>
+        </div>
+      </div>
 
       <div class="page-footer__social social">
         <div class="social__wrapper">
