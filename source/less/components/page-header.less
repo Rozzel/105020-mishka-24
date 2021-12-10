@@ -4,16 +4,14 @@
 }
 
 .page-header__wrapper {
+  position: relative;
   display: flex;
-  justify-content: center;
-  padding: 22px 30px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  min-height: 79px;
+}
 
-  @media (min-width: @tablet-width) {
-    justify-content: space-between;
-  }
-
-  @media (min-width: @desktop-width) {
-    align-items: center;
-    flex-direction: column;
-  }
+.page-header__logo-link {
+  margin-top: 22px;
 }
