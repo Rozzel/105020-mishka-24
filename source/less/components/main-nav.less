@@ -5,25 +5,50 @@
   .indent();
   background-color: @base-color--invert;
 
-  &--closed .main-nav__toggle::before {
-    .main-nav__toggle(closed);
+  &--closed .main-nav__toggle {
+    &::before {
+      .main-nav__toggle(closed);
+    }
   }
 
-  &--opened .main-nav__toggle::before,
-  &--opened .main-nav__toggle::after {
-    .main-nav__toggle(opened);
-  }
+  &--opened .main-nav__toggle {
+    &::before,
+    &::after {
+      .main-nav__toggle(opened);
+    }
 
-  &--opened .main-nav__toggle::before {
-    .main-nav__toggle(openedBefore);
-  }
+    &::before {
+      .main-nav__toggle(openedBefore);
+    }
 
-  &--opened .main-nav__toggle::after {
-    .main-nav__toggle(openedAfter);
+    &::after {
+      .main-nav__toggle(openedAfter);
+    }
   }
 
   &--closed .main-nav__list {
     display: none;
+  }
+
+  & a {
+    position: relative;
+    display: block;
+    .font-text(700; 17px; 24px; @base-color);
+    text-decoration: none;
+    padding: 28px 0;
+    width: 185px;
+  }
+
+  &--nojs {
+    position: static;
+
+    & .main-nav__list {
+      display: block;
+    }
+
+    & .main-nav__toggle {
+      display: none;
+    }
   }
 }
 
@@ -47,8 +72,7 @@
   top: -60px;
   right: 30px;
   z-index: 2;
-  width: 50px;
-  height: 50px;
+  .size(50px; 50px);
   background-color: @base-color--invert;
   cursor: pointer;
   border: none;
@@ -59,8 +83,7 @@
   position: absolute;
   top: 15px;
   left: 17px;
-  width: 20px;
-  height: 2px;
+  .size(20px; 2px);
   background-color: @base-color--2;
 }
 
@@ -95,16 +118,27 @@
 }
 
 .main-nav__item {
-  padding: 3px;
   .indent();
-  text-align: center;
-}
-
-.main-nav a {
-  position: relative;
-  display: block;
-  .font-text(700; 17px; 24px; @base-color);
-  text-decoration: none;
-  padding: 28px 0;
+  padding: 3px;
   box-shadow: 0 1px 0 #ececec, inset 0 1px 0 #ececec;
+  display: flex;
+  justify-content: center;
+
+  &:hover a {
+    opacity: 0.6;
+  }
+
+  &:active a {
+    opacity: 0.3;
+  }
+
+  & svg {
+    fill: fade(@base-color, 20%);
+    position: absolute;
+    left: -36px;
+  }
+
+  &:hover svg {
+    fill: @brand-color--1;
+  }
 }
