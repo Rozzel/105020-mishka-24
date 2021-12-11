@@ -5,9 +5,25 @@
   .indent();
   background-color: @base-color--invert;
 
-  &--closed {
-    // display: none;
-    display: block;
+  &--closed .main-nav__toggle::before {
+    .main-nav__toggle(closed);
+  }
+
+  &--opened .main-nav__toggle::before,
+  &--opened .main-nav__toggle::after {
+    .main-nav__toggle(opened);
+  }
+
+  &--opened .main-nav__toggle::before {
+    .main-nav__toggle(openedBefore);
+  }
+
+  &--opened .main-nav__toggle::after {
+    .main-nav__toggle(openedAfter);
+  }
+
+  &--closed .main-nav__list {
+    display: none;
   }
 }
 
@@ -26,31 +42,52 @@
 }
 
 .main-nav__toggle {
-  display: none;
-  // display: block;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // z-index: 2;
-  // width: 70px;
-  // height: 50px;
-  // background-color: @brand-color--1;
-  // cursor: pointer;
-  // border: none;
+  display: block;
+  position: absolute;
+  top: -60px;
+  right: 30px;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background-color: @base-color--invert;
+  cursor: pointer;
+  border: none;
+}
 
-  @media (min-width: @tablet-width) {
-    display: none;
-  }
+.main-nav__toggle(hamburger) {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  width: 20px;
+  height: 2px;
+  background-color: @base-color--2;
+}
 
-  @media (min-width: @desktop-width) {
-    display: none;
-  }
+.main-nav__toggle(closed) {
+  .main-nav__toggle(hamburger);
+  box-shadow: 0 8px 0 0 @base-color--2, 0 16px 0 0 @base-color--2;
+}
+
+.main-nav__toggle(opened) {
+  .main-nav__toggle(hamburger);
+  top: 25px;
+  box-shadow: none;
+}
+
+.main-nav__toggle(openedBefore) {
+  transform: rotate(45deg);
+}
+
+.main-nav__toggle(openedAfter) {
+  transform: rotate(-45deg);
 }
 
 .main-nav__list {
-  .indent(list);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  .indent(list);
 
   @media (min-width: @desktop-width) {
     justify-content: space-between;
@@ -59,4 +96,15 @@
 
 .main-nav__item {
   padding: 3px;
+  .indent();
+  text-align: center;
+}
+
+.main-nav a {
+  position: relative;
+  display: block;
+  .font-text(700; 17px; 24px; @base-color);
+  text-decoration: none;
+  padding: 28px 0;
+  box-shadow: 0 1px 0 #ececec, inset 0 1px 0 #ececec;
 }
