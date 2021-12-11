@@ -22,4 +22,15 @@
   &:active .page-header__logo {
     opacity: 0.3;
   }
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    left: @tablet-padding;
+  }
+}
+
+.page-header__logo {
+  @media (min-width: @tablet-width) {
+    content: url("../img/logo/mishka-logo-tablet.svg");
+  }
 }

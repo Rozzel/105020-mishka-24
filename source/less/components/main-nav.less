@@ -6,28 +6,34 @@
   background-color: @base-color--invert;
 
   &--closed .main-nav__toggle {
-    &::before {
-      .main-nav__toggle(closed);
+    @media (max-width: @mobile-width-only) {
+      &::before {
+        .main-nav__toggle(closed);
+      }
     }
   }
 
   &--opened .main-nav__toggle {
-    &::before,
-    &::after {
-      .main-nav__toggle(opened);
-    }
+    @media (max-width: @mobile-width-only) {
+      &::before,
+      &::after {
+        .main-nav__toggle(opened);
+      }
 
-    &::before {
-      .main-nav__toggle(openedBefore);
-    }
+      &::before {
+        .main-nav__toggle(openedBefore);
+      }
 
-    &::after {
-      .main-nav__toggle(openedAfter);
+      &::after {
+        .main-nav__toggle(openedAfter);
+      }
     }
   }
 
   &--closed .main-nav__list {
-    display: none;
+    @media (max-width: @mobile-width-only) {
+      display: none;
+    }
   }
 
   & a {
@@ -40,15 +46,21 @@
   }
 
   &--nojs {
+    @media (max-width: @mobile-width-only) {
+      position: static;
+
+      & .main-nav__list {
+        display: block;
+      }
+
+      & .main-nav__toggle {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: @tablet-width) {
     position: static;
-
-    & .main-nav__list {
-      display: block;
-    }
-
-    & .main-nav__toggle {
-      display: none;
-    }
   }
 }
 
@@ -56,14 +68,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-
-  @media (min-width: @tablet-width) {
-    display: block;
-  }
-
-  @media (min-width: @desktop-width) {
-    display: block;
-  }
 }
 
 .main-nav__toggle {
@@ -107,13 +111,37 @@
 }
 
 .main-nav__list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   .indent(list);
 
-  @media (min-width: @desktop-width) {
-    justify-content: space-between;
+  @media (max-width: @mobile-width-only) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    & .main-nav__item:nth-of-type(1) {
+      .grid-cr(1; 2);
+    }
+
+    & .main-nav__item:nth-of-type(2) {
+      .grid-cr(2; 2);
+    }
+
+    & .main-nav__item:nth-child(3) {
+      .grid-cr(3; 1);
+    }
+
+    & .main-nav__item:nth-child(4) {
+      .grid-cr(4; 1);
+    }
+
+    & .main-nav__item:nth-child(5) {
+      .grid-cr(3 / -1; 2);
+    }
   }
 }
 
@@ -140,5 +168,11 @@
 
   &:hover svg {
     fill: @brand-color--1;
+  }
+
+  &--delivery {
+    @media (max-width: @mobile-width-only) {
+      display: none;
+    }
   }
 }
