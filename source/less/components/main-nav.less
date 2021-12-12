@@ -43,6 +43,11 @@
     text-decoration: none;
     padding: 28px 0;
     width: 185px;
+
+    @media (min-width: @tablet-width) {
+      width: auto;
+      .font-text(700; 15px; 24px; @base-color);
+    }
   }
 
   &--nojs {
@@ -66,7 +71,6 @@
 
 .main-nav__wrapper {
   display: flex;
-  justify-content: center;
   width: 100%;
 }
 
@@ -112,43 +116,70 @@
 
 .main-nav__list {
   .indent(list);
+  width: 100%;
 
   @media (max-width: @mobile-width-only) {
     display: flex;
     flex-direction: column;
-    width: 100%;
   }
 
   @media (min-width: @tablet-width) {
+    position: absolute;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 25% 25% 10% 40%;
+    grid-template-rows: 89px;
 
-    & .main-nav__item:nth-of-type(1) {
+    & .main-nav__item:nth-child(1) {
       .grid-cr(1; 2);
+      padding-left: @tablet-padding;
     }
 
-    & .main-nav__item:nth-of-type(2) {
+    & .main-nav__item:nth-child(2) {
       .grid-cr(2; 2);
+      box-shadow: none;
+      padding-left: 10px;
     }
 
     & .main-nav__item:nth-child(3) {
       .grid-cr(3; 1);
+      justify-self: center;
+      width: 89px;
+      outline: 1px solid @base-color--3;
+
+      & a {
+        margin: 0 auto;
+      }
+
+      & svg {
+        position: static;
+      }
+
+      & span {
+        display: none;
+      }
     }
 
     & .main-nav__item:nth-child(4) {
       .grid-cr(4; 1);
+      justify-self: flex-end;
+      padding-right: @tablet-padding;
     }
 
     & .main-nav__item:nth-child(5) {
-      .grid-cr(3 / -1; 2);
+      .grid-cr(4; 2);
+      justify-self: flex-end;
+      padding-right: @tablet-padding;
+
+      & a {
+        .font-text(400; 15px; 24px; @base-color--lighten);
+      }
     }
   }
 }
 
 .main-nav__item {
   .indent();
-  padding: 3px;
-  box-shadow: 0 1px 0 #ececec, inset 0 1px 0 #ececec;
+  box-shadow: 0 1px 0 @base-color--3, inset 0 1px 0 @base-color--3;
   display: flex;
   justify-content: center;
 
@@ -174,5 +205,10 @@
     @media (max-width: @mobile-width-only) {
       display: none;
     }
+  }
+
+  @media (min-width: @tablet-width) {
+    justify-content: flex-start;
+    box-shadow: none;
   }
 }
