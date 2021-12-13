@@ -1,12 +1,15 @@
 .catalog-sections {
   width: 100%;
   background: url("../img/background/hero-mobile-bg.png");
+}
 
+.catalog-sections__zigzag-line {
   @media (min-width: @tablet-width) {
+    position: relative;
     padding-top: 110px;
     display: flex;
     justify-content: center;
-    position: relative;
+    margin-bottom: 24px;
 
     &::after {
       content: "";
@@ -14,7 +17,7 @@
       position: absolute;
       bottom: -15px;
       height: 24px;
-      background: url("../img/background/zigzag-line.svg") bottom left 2px;
+      background: url("../img/background/zigzag-line.svg") bottom center;
     }
   }
 }
