@@ -1,0 +1,38 @@
+.separator {
+  position: relative;
+
+  &--line {
+    @media (min-width: @tablet-width) {
+      margin-bottom: 24px;
+
+      &::after {
+        .zigzag(24px; 100%; -15px; "zigzag-line-tablet.svg";);
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-bottom: 34px;
+
+      &::after {
+        .zigzag(34px; 100%; -20px; "zigzag-line-desktop.svg";);
+      }
+    }
+  }
+
+  &--zigzag {
+    &::after {
+      @media (max-width: @mobile-width-only) {
+        .zigzag(6px; 100%; 0; "separator-zigzag-mobile.svg");
+      }
+
+      @media (min-width: @tablet-width) {
+        .zigzag(17px; 100%; 0; "separator-zigzag-tablet.svg");
+      }
+
+      @media (min-width: @desktop-width) {
+        .zigzag(23px; @desktop-size; 0; "separator-zigzag-desktop.svg");
+      }
+    }
+  }
+}
+
