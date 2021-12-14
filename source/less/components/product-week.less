@@ -50,10 +50,22 @@
 }
 
 .product-week__specifications {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 10px;
+  .indent();
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 28px;
+}
+
+.product-week__specifications-item {
+  display: grid;
+  grid-template-columns: 97px 1fr;
+  box-shadow: 0 5px 0 0 #ffffff, 0 6px 0 0 @base-color--3;
+}
+
+.product-week__description,
+.product-week__value {
+  .indent();
 }
 
 .product-week__images {
