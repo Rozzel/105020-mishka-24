@@ -28,11 +28,6 @@
   height: @height;
 }
 
-.button-m() {
-  padding: 16px 0;
-  text-align: center;
-}
-
 // start indent
 .indent() {
   margin: 0;
@@ -47,6 +42,11 @@
 
 .size-width(@size; @padding) {
   width: @size;
+  padding: 0  @padding;
+}
+
+.size-width(max; @size; @padding) {
+  max-width: @size;
   padding: 0  @padding;
 }
 
