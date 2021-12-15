@@ -78,14 +78,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
+  padding: 0 @mobile-padding;
+  width: 425px - @mobile-padding * 2;
 
   @media (min-width: @tablet-width) {
     width: 260px;
+    padding: 0;
   }
 
   @media (min-width: @desktop-width) {
     width: 450px;
+    padding: 0;
   }
 }
 
