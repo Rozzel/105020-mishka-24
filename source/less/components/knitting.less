@@ -7,7 +7,7 @@
 }
 
 .knitting__wrapper-greeting-text {
-  .size-width(@mobile-size; @mobile-padding);
+  .size-width(max; @mobile-size; @mobile-padding);
   margin: 0 auto;
 
   @media (min-width: @tablet-width) {
@@ -22,7 +22,7 @@
 .knitting__group {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  .size-width(@mobile-size; @mobile-padding);
+  .size-width(max; @mobile-size; @mobile-padding);
   margin: 0 auto;
 
   @media (min-width: @tablet-width) {
@@ -73,7 +73,7 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  .size-width(@mobile-size; @mobile-padding);
+  .size-width(max; @mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-width) {
     width: @tablet-size;
