@@ -8,4 +8,23 @@
   .font-text(700; 18px; 20px; @base-color--lighten);
   text-transform: uppercase;
   cursor: pointer;
+
+  &__arrow {
+    .size(50px; 26px);
+    background: url("../img/icon/huge-arrow.svg") no-repeat center center;
+    border: 1px solid @base-color--3;
+    display: block;
+
+    &--right {
+      transform: scaleX(-1);
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
 }
