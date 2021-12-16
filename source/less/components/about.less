@@ -28,7 +28,14 @@
 .about__title {
   .font-text(700; 25px; 30px; @base-color);
   margin-bottom: 28px;
-  width: 100%;
+
+  @media (max-width: @mobile-width-only) {
+    &::after {
+      content: "";
+      display: inline-block;
+      .size(260px; 1px);
+    }
+  }
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
