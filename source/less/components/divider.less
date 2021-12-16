@@ -1,0 +1,41 @@
+.divider {
+  position: relative;
+
+  &--line {
+    @media (min-width: @tablet-width) {
+      margin-bottom: 24px;
+
+      &::after {
+        .divider(24px; 100%; -15px; "zigzag-line-tablet.svg";);
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-bottom: 34px;
+
+      &::after {
+        .divider(34px; 100%; -20px; "zigzag-line-desktop.svg";);
+      }
+    }
+  }
+
+  &--zigzag {
+    &::after {
+      @media (max-width: @mobile-width-only) {
+        .divider(6px; 100%; 0; "separator-zigzag-mobile.svg");
+      }
+
+      @media (min-width: @tablet-width) {
+        .divider(17px; 100%; 0; "separator-zigzag-tablet.svg");
+      }
+
+      @media (min-width: @desktop-width) {
+        .divider(23px; 100%; 0; "separator-zigzag-desktop.svg");
+        // toDo - Написал вопрос автором, жду ответа.
+        //  Ограниченный размер под макет десктопа. Сделал как сказала наставник.
+        // .divider(23px; @desktop-size; 0; "separator-zigzag-desktop.svg");
+      }
+    }
+  }
+}
+

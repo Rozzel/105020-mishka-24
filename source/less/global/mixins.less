@@ -55,13 +55,13 @@
   grid-row: @r;
 }
 
-.zigzag(@height; @width; @bottom; @name;) {
+.divider(@height; @width; @bottom; @name;) {
   position: absolute;
   content: "";
   width: @width;
   height: @height;
   bottom: @bottom;
-  background: url("../img/background/separator/@{name}") bottom center;
+  background: url("../img/divider/@{name}") bottom center;
 }
 
 .main-nav__toggle(hamburger) {
