@@ -5,18 +5,23 @@
 }
 
 .about__wrapper {
+  .size-width(max; @mobile-size-big; @mobile-padding);
   padding-top: 31px;
-  .size-width(@mobile-size; @mobile-padding);
-  padding-bottom: 15px;
+  padding-bottom: 30px;
 
   @media (min-width: @tablet-width) {
-    display: flex;
-    flex-wrap: wrap;
+    max-width: none;
     .size-width(@tablet-size; @tablet-padding);
+    padding-top: 35px;
+    padding-bottom: 40px;
   }
 
   @media (min-width: @desktop-width) {
     .size-width(@desktop-size; @desktop-padding);
+    display: grid;
+    grid-template-columns: 143px 1fr;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 }
 
@@ -24,18 +29,81 @@
   .font-text(700; 25px; 30px; @base-color);
   margin-bottom: 28px;
   width: 100%;
-}
 
-.abaut__item {
-  .font-text(700; 17px; 20px; @base-color);
-  margin-bottom: 83px;
+  @media (min-width: @tablet-width) {
+    .font-text(700; 43px; 50px; @base-color);
+  }
+
+  @media (min-width: @desktop-width) {
+    .font-text(700; 53px; 57px; @base-color);
+    .grid-cr(2; 1);
+  }
 }
 
 .about__list {
+  .font-text(700; 17px; 20px; @base-color);
   .indent(list);
 
   @media (min-width: @tablet-width) {
+    .font-text(700; 20px; 22px; @base-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  @media (min-width: @desktop-width) {
+    .grid-cr(2; 2);
+  }
+}
+
+.abaut__item {
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(4) {
+    order: 1;
+  }
+
+  &:nth-child(2),
+  &:nth-child(5) {
+    order: 2;
+  }
+
+  &:nth-child(3n) {
+    order: 3;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &:nth-child(1)::before {
+    .item-icon(33px; 38px; 16px; "flower.svg");
+  }
+
+  &:nth-child(2)::before {
+    .item-icon(47px; 27px; 26px; "money.svg");
+  }
+
+  &:nth-child(3)::before {
+    .item-icon(34px; 27px; 21px; "heart.svg");
+  }
+
+  &:nth-child(4)::before {
+    .item-icon(35px; 34px; 17px; "clew.svg");
+  }
+
+  &:nth-child(5)::before {
+    .item-icon(55px; 23px; 26px; "rocket.svg");
+  }
+
+  &:nth-child(6)::before {
+    .item-icon(33px; 32px; 20px; "present.svg");
+  }
+
+  @media (min-width: @tablet-width) {
+    &:not(:last-child) {
+      margin-bottom: 63px;
+    }
   }
 }

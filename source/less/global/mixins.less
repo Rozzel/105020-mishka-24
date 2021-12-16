@@ -91,3 +91,12 @@
 .main-nav__toggle(openedAfter) {
   transform: rotate(-45deg);
 }
+
+.item-icon(@width: 34px; @height: 34px; @margin: 16px; @name: "circle.svg") {
+  content: "";
+  display: inline-block;
+  width: @width;
+  height: @height;
+  background: url("../img/icon/about/@{name}") no-repeat;
+  margin-bottom: @margin;
+}
