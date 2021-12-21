@@ -2,29 +2,63 @@
   display: inline-block;
   background-color: @base-color--invert;
   text-decoration: none;
-  padding: 16px 70px;
+  padding: 16px 90px;
   text-align: center;
   border: 2px solid @base-color--lighten;
   .font-text(700; 18px; 20px; @base-color--lighten);
   text-transform: uppercase;
   cursor: pointer;
 
+  @media (min-width: @tablet-width) {
+    font-size: 17px;
+    padding: 16px 0;
+  }
+
+  &:hover {
+    background-color: @base-color--lighten;
+    color: @base-color--invert;
+  }
+
+  &:active {
+    color: fade(@base-color--invert, 30%);
+  }
+
   &__arrow {
+    position: relative;
     .size(50px; 26px);
-    background: url("../img/icon/huge-arrow.svg") no-repeat center center;
     border: 1px solid @base-color--3;
     display: block;
+    width: 100%;
+    padding: 26px 26px;
+
+    @media (min-width: @tablet-width) {
+      background-color: fade(@base-color--invert, 0%);
+      border: none;
+      padding: 0;
+    }
+
+    & svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: @base-color;
+    }
 
     &--right {
       transform: scaleX(-1);
     }
 
     &:hover {
-      opacity: 0.6;
+      background-color: fade(@base-color--invert, 0%);
     }
 
-    &:active {
-      opacity: 0.3;
+    &:hover svg {
+      fill: fade(@base-color, 60%);
+    }
+
+    &:active svg {
+      fill: fade(@base-color, 30%);
     }
   }
 }

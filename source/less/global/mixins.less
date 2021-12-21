@@ -50,18 +50,24 @@
   padding: 0  @padding;
 }
 
+.size-width(no-max; @size; @padding) {
+  max-width: none;
+  .size-width(@size; @padding);
+}
+
 .grid-cr(@c; @r) {
   grid-column: @c;
   grid-row: @r;
 }
 
-.divider(@height; @width; @bottom; @name;) {
+.divider(@height; @width; @bottom; @name; @margin: 0) {
   position: absolute;
   content: "";
   width: @width;
   height: @height;
   bottom: @bottom;
   background: url("../img/divider/@{name}") bottom center;
+  margin: 0 @margin;
 }
 
 .main-nav__toggle(hamburger) {
