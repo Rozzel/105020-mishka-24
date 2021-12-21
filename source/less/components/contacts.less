@@ -3,63 +3,86 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 39px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 57px;
+  }
 
   @media (min-width: @desktop-width) {
     display: grid;
     margin: 0 auto;
     .size-width(@desktop-size; @desktop-padding);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 143px 380px 527px;
     grid-template-areas:
-      "w m"
-      "w m"
-      "b m";
+      ". wrapper map"
+      ". wrapper map"
+      ". button map";
+    margin-top: 71px;
+    margin-bottom: 105px;
   }
 }
 
 .contacts__wrapper {
   display: grid;
   .size-width(max; @mobile-size; @mobile-padding);
-  padding-top: 30px;
-  grid-area: w;
+  padding-top: 38px;
 
   @media (min-width: @tablet-width) {
-    .size-width(@tablet-size; @tablet-padding);
+    .size-width(no-max; @tablet-size; @tablet-padding);
+    padding-top: 68px;
   }
 
   @media (min-width: @desktop-width) {
-    width: 400px;
+    grid-area: wrapper;
+    padding: 0;
+    padding-top: 71px;
   }
 }
 
 .contacts__title {
+  position: relative;
   .font-text(700; 25px; 30px; @base-color);
+  .indent();
   margin-bottom: 28px;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
+
+    &::after {
+      content: "";
+      .size(47px; 81px);
+      position: absolute;
+      background: url("../img/icon/flag.svg");
+      top: -20px;
+      right: 0;
+    }
   }
 
   @media (min-width: @desktop-width) {
     .font-text(700; 53px; 57px; @base-color);
+
+    &::after {
+      top: -20px;
+      left: -140px;
+    }
   }
 }
 
 .contacts__data {
+  .font-text(400; 14px; 30px; @base-color--lighten);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  column-gap: 1px;
-  row-gap: 20px;
-  .font-text(400; 14px; 30px);
+  row-gap: 30px;
   margin-bottom: 62px;
 
   @media (min-width: @tablet-width) {
+    .font-text(400; 17px; 30px; @base-color--lighten);
     grid-template-columns: repeat(2, 1fr 2fr);
-    width: @tablet-size;
   }
 
   @media (min-width: @desktop-width) {
-    grid-template-columns: 1fr 2fr;
-    width: @tablet-size;
+    grid-template-columns: 82px 1fr;
   }
 }
 
@@ -71,18 +94,31 @@
 
 .contacts__link {
   text-decoration: none;
+  box-shadow: 0 3px 0 0 @base-color--invert, 0 4px 0 0 @brand-color--3;
   color: @base-color--lighten;
 }
 
 .contacts__map {
   margin-bottom: 42px;
-  grid-area: m;
+  grid-area: map;
+
+  @media (min-width: @desktop-width) {
+    width: 527px;
+    margin-bottom: 0;
+  }
 }
 
 .contact__button {
-  padding: 16px 27px;
+  padding: 13px 27px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 20px;
-  grid-area: b;
+  grid-area: button;
+  min-width: 172px;
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
 }
