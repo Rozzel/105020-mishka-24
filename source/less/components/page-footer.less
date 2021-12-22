@@ -6,7 +6,7 @@
 }
 
 .page-footer__wrapper {
-  .size-width(max; @mobile-size; @mobile-padding);
+  .size-width(@mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-size) {
     display: flex;
@@ -29,4 +29,19 @@
 
 .page-footer__logo-wrapper {
   display: flex;
+}
+
+.page-footer__social {
+  width: 100%;
+}
+
+.page-footer__social-wrapper {
+  padding: 30px 0;
+}
+
+.page-footer__social-list {
+  display: flex;
+  // justify-content: space-evenly;
+  justify-content: space-between;
+  .indent(list);
 }

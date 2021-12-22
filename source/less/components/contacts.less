@@ -34,6 +34,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    .size-width(100%; 0);
     grid-area: wrapper;
     padding: 0;
     padding-top: 71px;
@@ -109,16 +110,20 @@
 }
 
 .contact__button {
-  padding: 13px 27px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
   grid-area: button;
-  min-width: 172px;
+  width: 100%;
 
   @media (min-width: @desktop-width) {
-    margin: 0;
-    margin-right: auto;
-    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+}
+
+.contact__button-wraper {
+  .size-width(max; @mobile-size; @mobile-padding);
+
+  @media (min-width: @tablet-width) {
+    .size-width(no-max; 230px; 0);
   }
 }

@@ -9,3 +9,13 @@ body {
   height: 1px;
   margin: -1px;
 }
+
+.spacer {
+  @media (max-width: @mobile-width-only) {
+    &::after {
+      content: "";
+      display: inline-block;
+      .size(260px; 1px);
+    }
+  }
+}
