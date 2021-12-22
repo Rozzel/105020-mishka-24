@@ -6,33 +6,39 @@
   background-color: @base-color--invert;
 
   &--closed .main-nav__toggle {
-    @media (max-width: @mobile-width-only) {
-      &::before {
-        .main-nav__toggle(closed);
-      }
+    &::before {
+      .main-nav__toggle(closed);
+    }
+
+    @media (min-width: @tablet-width) {
+      .visually-hidden();
     }
   }
 
   &--opened .main-nav__toggle {
-    @media (max-width: @mobile-width-only) {
-      &::before,
-      &::after {
-        .main-nav__toggle(opened);
-      }
+    &::before,
+    &::after {
+      .main-nav__toggle(opened);
+    }
 
-      &::before {
-        .main-nav__toggle(openedBefore);
-      }
+    &::before {
+      .main-nav__toggle(openedBefore);
+    }
 
-      &::after {
-        .main-nav__toggle(openedAfter);
-      }
+    &::after {
+      .main-nav__toggle(openedAfter);
+    }
+
+    @media (min-width: @tablet-width) {
+      display: none;
     }
   }
 
   &--closed .main-nav__list {
-    @media (max-width: @mobile-width-only) {
-      display: none;
+    display: none;
+
+    @media (min-width: @tablet-width) {
+      display: block;
     }
   }
 
@@ -51,16 +57,18 @@
   }
 
   &--nojs {
-    @media (max-width: @mobile-width-only) {
-      position: static;
+    position: static;
 
-      & .main-nav__list {
-        display: block;
-      }
+    & .main-nav__list {
+      display: block;
+    }
 
-      & .main-nav__toggle {
-        display: none;
-      }
+    & .main-nav__toggle {
+      display: none;
+    }
+
+    @media (max-width: @tablet-width) {
+      display: none;
     }
   }
 
@@ -94,11 +102,8 @@
 .main-nav__list {
   .indent(list);
   width: 100%;
-
-  @media (max-width: @mobile-width-only) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: @tablet-width) {
     position: absolute;
@@ -207,6 +212,11 @@
   display: flex;
   justify-content: center;
 
+  @media (min-width: @tablet-width) {
+    justify-content: flex-start;
+    box-shadow: none;
+  }
+
   &:hover a {
     opacity: 0.6;
   }
@@ -227,19 +237,12 @@
 
   &--tablet,
   &--desktop {
-    @media (max-width: @mobile-width-only) {
-      display: none;
-    }
+    display: none;
   }
 
   &--desktop {
     @media (min-width: @tablet-width) {
-      display: none;
+      display: block;
     }
-  }
-
-  @media (min-width: @tablet-width) {
-    justify-content: flex-start;
-    box-shadow: none;
   }
 }

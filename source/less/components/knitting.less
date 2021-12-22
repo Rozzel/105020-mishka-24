@@ -94,12 +94,10 @@
 .knitting__button {
   .font-text(700; 17px; 16px; @base-color--lighten);
   padding: 18px 0;
-
-  @media (max-width: @mobile-width-only) {
-    width: 100%;
-  }
+  width: 100%;
 
   @media (min-width: @tablet-width) {
+    width: auto;
     order: -1;
     padding: 18px 32px;
   }
