@@ -1,7 +1,14 @@
 .page-header {
+  // toDo
   background-color: @base-color--invert;
+  // background-color: rgb(255, 185, 185);
   width: 100%;
   z-index: 1;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .page-header__wrapper {
@@ -9,30 +16,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 @mobile-padding;
-  height: 79px;
   box-shadow: 0 1px 0 @base-color--3, inset 0 1px 0 @base-color--3;
 
   @media (min-width: @tablet-width) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 88px;
-    height: auto;
-  }
-}
-
-.page-header__nav {
-  @media (min-width: @tablet-width) {
-    .grid-cr(1 / -1; 1);
+    .size-width(@tablet-size; @tablet-padding);
   }
 }
 
 .page-header__logo-link {
   margin-top: 22px;
+  margin-bottom: 22px;
   z-index: 1;
 
   @media (min-width: @tablet-width) {
-    .grid-cr(1 / 1; 1);
+    position: absolute;
+    align-self: flex-start;
   }
 
   &:hover .page-header__logo {
