@@ -1,13 +1,21 @@
 .page-header {
-  // toDo
-  background-color: @base-color--invert;
-  // background-color: rgb(255, 185, 185);
   width: 100%;
   z-index: 1;
 
   @media (min-width: @tablet-width) {
     display: flex;
     justify-content: center;
+    background: url("../img/background/hero-mobile-bg.png");
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 88px;
+      background-color: @base-color--invert;
+      border-bottom: 1px solid @base-color--3;
+    }
   }
 }
 
@@ -20,6 +28,11 @@
 
   @media (min-width: @tablet-width) {
     .size-width(@tablet-size; @tablet-padding);
+    box-shadow: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    .size-width(@desktop-size; @desktop-padding);
   }
 }
 
@@ -27,11 +40,6 @@
   margin-top: 22px;
   margin-bottom: 22px;
   z-index: 1;
-
-  @media (min-width: @tablet-width) {
-    position: absolute;
-    align-self: flex-start;
-  }
 
   &:hover .page-header__logo {
     opacity: 0.6;
@@ -43,6 +51,15 @@
 
   @media (min-width: @desktop-width) {
     margin-top: 9px;
+  }
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    align-self: flex-start;
+  }
+
+  @media (min-width: @desktop-width) {
+    align-self: center;
   }
 }
 
