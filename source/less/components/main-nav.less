@@ -124,7 +124,7 @@
   & svg {
     fill: fade(@base-color, 20%);
     position: absolute;
-    left: -36px; //TODO
+    left: -36px;
 
     @media (min-width: @tablet-width) {
       left: 0;
@@ -142,13 +142,13 @@
 
   &--tablet {
     @media (min-width: @tablet-width) {
-      display: block;
+      display: flex;
     }
   }
 
   &--desktop {
     @media (min-width: @desktop-width) {
-      display: block;
+      display: flex;
     }
   }
 
@@ -238,6 +238,10 @@
       &--search {
         justify-content: center;
       }
+
+      &--desktop {
+        display: none;
+      }
     }
 
     & .main-nav__item:not(:nth-child(-n + 2)) {
@@ -249,11 +253,19 @@
       .font-text(400; 15px; 24px; @base-color--lighten);
     }
   }
+
+  @media (min-width: @desktop-width) {
+    & .main-nav__item {
+      &--desktop {
+        display: flex;
+      }
+    }
+  }
 }
 
 .main-nav__item--cart a {
   @media (min-width: @tablet-width) {
     .font-text(700; 17px; 24px; @base-color);
-    padding-left: 32px; // TODO
+    padding-left: 32px;
   }
 }
