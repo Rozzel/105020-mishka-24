@@ -100,7 +100,7 @@
   display: flex;
   justify-content: center;
 
-  & a {
+  & a { // TODO Перенести в отдельный класс main-nav__link
     position: relative;
     display: block;
     .font-text(700; 17px; 24px; @base-color);
@@ -110,6 +110,7 @@
 
     @media (min-width: @tablet-width) {
       padding: 0;
+      height: min-content; //TODO ДОбалиу сжатие
     }
   }
 
