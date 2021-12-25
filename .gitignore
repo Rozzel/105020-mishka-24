@@ -12,3 +12,4 @@ source/css/*.css
 source/css/*.map
 Thumbs.db
 /**/pixel-perfect/
+/**/pixel-perfect.less
