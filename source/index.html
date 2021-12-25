@@ -222,40 +222,40 @@
   <footer class="page-footer">
     <div class="page-footer__wrapper">
 
-        <div class="page-footer__logo">
-          <a class="page-footer__logo-link">
-            <svg width="86" height="35" viewBox="0 0 86 35" aria-label="Логотип интернет-магазин: Мишка">
-              <use xlink:href="../img/sprite.svg#logo-mobile"></use>
-            </svg>
-          </a>
-        </div>
+      <div class="page-footer__logo">
+        <a class="page-footer__logo-link">
+          <svg width="86" height="35" viewBox="0 0 86 35" aria-label="Логотип интернет-магазин: Мишка">
+            <use xlink:href="../img/sprite.svg#logo-mobile"></use>
+          </svg>
+        </a>
+      </div>
 
       <div class="page-footer__social divider divider--small">
-          <ul class="page-footer__social-list">
+        <ul class="page-footer__social-list">
 
-            <li class="page-footer__social-item">
-              <a class="page-footer__social-link" href="https://www.instagram.com/htmlacademy/" target="_blank" aria-label="Мы в Инстаграме">
-                <svg width="22" height="22" viewBox="0 0 22 22">
-                  <use xlink:href="img/sprite.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="page-footer__social-item">
-              <a class="page-footer__social-link" href="https://www.facebook.com/htmlacademy" target="_blank" aria-label="Мы в Фейсбуке">
-                <svg width="15" height="28" viewBox="0 0 15 28">
-                  <use xlink:href="img/sprite.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="page-footer__social-item">
-              <a class="page-footer__social-link" href="https://twitter.com/htmlacademy_ru" target="_blank" aria-label="Мы в Твиттере">
-                <svg width="23" height="20" viewBox="0 0 23 20">
-                  <use xlink:href="img/sprite.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
+          <li class="page-footer__social-item">
+            <a class="page-footer__social-link" href="https://www.instagram.com/htmlacademy/" target="_blank" aria-label="Мы в Инстаграме">
+              <svg width="22" height="22" viewBox="0 0 22 22">
+                <use xlink:href="img/sprite.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a class="page-footer__social-link" href="https://www.facebook.com/htmlacademy" target="_blank" aria-label="Мы в Фейсбуке">
+              <svg width="15" height="28" viewBox="0 0 15 28">
+                <use xlink:href="img/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a class="page-footer__social-link" href="https://twitter.com/htmlacademy_ru" target="_blank" aria-label="Мы в Твиттере">
+              <svg width="23" height="20" viewBox="0 0 23 20">
+                <use xlink:href="img/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
 
-          </ul>
+        </ul>
       </div>
 
       <div class="page-footer__copyright">
@@ -300,6 +300,15 @@
   </div>
 
   <script src="js/app.js"></script>
+
+  <picture>
+    <img src="pixel-perfect/img/mobile.png" class="pixel-perfect" />
+    <script>
+      if (document.location.hash === "#pixel-perfect")
+        document.querySelector(".pixel-perfect").style.display = "block";
+    </script>
+  </picture>
+
 </body>
 
 </html>
