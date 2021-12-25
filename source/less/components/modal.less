@@ -9,7 +9,7 @@
 }
 
 .modal__wrapper {
-  .size-width(@mobile-size; @mobile-padding);
+  .size-width(max; @mobile-size; @mobile-padding);
 
   @media (min-width: @tablet-width) {
     width: 556px;
@@ -41,5 +41,6 @@
 
 .modal__button {
   margin-top: 31px;
-  .button-m();
+  padding: 16px 0;
+  text-align: center;
 }

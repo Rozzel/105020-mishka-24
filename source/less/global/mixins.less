@@ -28,11 +28,6 @@
   height: @height;
 }
 
-.button-m() {
-  padding: 16px 0;
-  text-align: center;
-}
-
 // start indent
 .indent() {
   margin: 0;
@@ -48,4 +43,72 @@
 .size-width(@size; @padding) {
   width: @size;
   padding: 0  @padding;
+}
+
+.size-width(max; @size; @padding) {
+  max-width: @size;
+  padding: 0  @padding;
+}
+
+.size-width(no-max; @size; @padding) {
+  max-width: none;
+  .size-width(@size; @padding);
+}
+
+.grid-cr(@c; @r) {
+  grid-column: @c;
+  grid-row: @r;
+}
+
+.divider(@height; @width; @bottom; @name; @margin: 0) {
+  position: absolute;
+  content: "";
+  width: @width;
+  height: @height;
+  bottom: @bottom;
+  background: url("../img/divider/@{name}") bottom center;
+  margin: 0 @margin;
+}
+
+.main-nav__toggle(hamburger) {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  .size(20px; 2px);
+  background-color: @base-color--2;
+}
+
+.main-nav__toggle(closed) {
+  .main-nav__toggle(hamburger);
+  box-shadow: 0 8px 0 0 @base-color--2, 0 16px 0 0 @base-color--2;
+}
+
+.main-nav__toggle(opened) {
+  .main-nav__toggle(hamburger);
+  top: 25px;
+  box-shadow: none;
+}
+
+.main-nav__toggle(openedBefore) {
+  transform: rotate(45deg);
+}
+
+.main-nav__toggle(openedAfter) {
+  transform: rotate(-45deg);
+}
+
+.item-icon(@width: 34px; @height: 34px; @margin: 16px; @name: "circle.svg") {
+  content: "";
+  display: inline-block;
+  width: @width;
+  height: @height;
+  background: url("../img/icon/about/@{name}") no-repeat;
+  margin-bottom: @margin;
+}
+
+.flex(@justify: center; @align: center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
 }
