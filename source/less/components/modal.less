@@ -21,6 +21,11 @@
   background-color: @base-color--invert;
   padding-top: 30px;
   padding-bottom: 46px;
+  box-shadow: 0 5px 10px fade(@shadow-color--1, 25%);
+
+  @media (min-width: @tablet-width) {
+    .size-width(566px; @tablet-padding);
+  }
 }
 
 .modal__content {
@@ -43,17 +48,39 @@
 
 .modal__label-group {
   display: flex;
+  max-width: 350px;
   gap: 7px;
 }
 
 .modal__label {
+  .font-text(700; 17px; 16px; @base-color--lighten);
   .size(100%; 52px);
-  border: 1px solid rgb(255, 82, 82);
+  border: 2px solid fade(@base-color--lighten, 10%);
   .flex(center; center);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid fade(@base-color--lighten, 30%);
+  }
+}
+
+.modal__input {
+  &:checked + .modal__label {
+    border: 2px solid @brand-color--1;
+  }
+
+  &:focus + .modal__label {
+    border: 2px solid @brand-color--1;
+  }
+}
+
+.modal__wrapper-button {
+  .flex(center; flex-end);
+  padding-top: 31px;
 }
 
 .modal__button {
-  margin-top: 31px;
+  .font-text(700; 17px; 16px; @base-color--invert);
   padding: 16px 0;
-  text-align: center;
+  max-width: 350px;
 }

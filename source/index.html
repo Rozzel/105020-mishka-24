@@ -283,18 +283,22 @@
           <input type="hidden" name="product" value="Вязаные корзинки">
 
           <div class="modal__label-group">
+
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-s" value="S">
             <label for="size-s" class="modal__label">S</label>
-            <input class="visually-hidden" name="size" type="radio" id="size-s" value="S">
 
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-m" value="M">
             <label for="size-m" class="modal__label">M</label>
-            <input class="visually-hidden" name="size" type="radio" id="size-m" value="M">
 
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-l" value="L">
             <label for="size-l" class="modal__label">L</label>
-            <input class="visually-hidden" name="size" type="radio" id="size-l" value="L">
+
           </div>
 
-          <button type="submit" class="modal__button button">Добавить</button>
-
+          <div class="modal__wrapper-button">
+            <button type="submit" class="modal__button button button--full">Добавить</button>
+          </div>
+          
         </form>
       </section>
     </div>
