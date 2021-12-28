@@ -178,7 +178,7 @@
         </div>
 
         <div class="reviews__wraper-button">
-          <button class="slider__button-prev button button__arrow button__arrow" type="button" aria-label="Предыдущий отзыв">
+          <button class="slider__button-prev button button__arrow" type="button" aria-label="Предыдущий отзыв">
             <svg width="50" height="26" viewBox="0 0 50 26">
               <use xlink:href="../img/sprite.svg#huge-arrow"></use>
             </svg>
@@ -276,13 +276,14 @@
     <div class="modal__wrapper">
       <section class="modal__content">
         <h2 class="modal__title">Добавить<br> в корзину</h2>
-        <p class="modal__text">Выберите размер:</p>
+        <p ></p>
 
         <form class="modal__forms" action="https://echo.htmlacademy.ru/" method="POST">
 
           <input type="hidden" name="product" value="Вязаные корзинки">
 
-          <div class="modal__label-group">
+          <fieldset class="modal__label-group">
+            <legend class="modal__text">Выберите размер:</legend>
 
             <input class="modal__input visually-hidden" name="size" type="radio" id="size-s" value="S">
             <label for="size-s" class="modal__label">S</label>
@@ -293,12 +294,12 @@
             <input class="modal__input visually-hidden" name="size" type="radio" id="size-l" value="L">
             <label for="size-l" class="modal__label">L</label>
 
-          </div>
+          </fieldset>
 
           <div class="modal__wrapper-button">
             <button type="submit" class="modal__button button button--full">Добавить</button>
           </div>
-          
+
         </form>
       </section>
     </div>

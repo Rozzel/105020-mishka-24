@@ -10,12 +10,6 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  &--full {
-    background-color: @brand-color--1;
-    border: 2px solid @brand-color--1;
-    color: @base-color--invert;
-  }
-
   @media (min-width: @tablet-width) {
     font-size: 17px;
     padding: 16px 0;
@@ -66,6 +60,16 @@
 
     &:active svg {
       fill: fade(@base-color, 30%);
+    }
+  }
+
+  &--full {
+    background-color: @brand-color--1;
+    border: 2px solid @brand-color--1;
+    color: @base-color--invert;
+
+    &:hover {
+      border: 2px solid @base-color--lighten;
     }
   }
 }

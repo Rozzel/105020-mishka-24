@@ -11,13 +11,12 @@
   background-color: fade(@base-color--invert, 90%);
 }
 
-//FIXME
-// .modal--close {
-//   display: none;
-// }
+.modal--close {
+  display: none;
+}
 
 .modal__wrapper {
-  .size-width(100%; @mobile-padding);
+  .size-width(100%; 0);
   background-color: @base-color--invert;
   padding-top: 30px;
   padding-bottom: 46px;
@@ -39,17 +38,38 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 14px;
+
+  @media (min-width: @tablet-width) {
+    .font-text(700; 30px; 57px; @base-color);
+
+    & br {
+      display: none;
+    }
+  }
 }
 
 .modal__text {
-  .font-text(400; 15px; 30px);
+  .font-text(400; 15px; 30px; @base-color--lighten);
   text-align: center;
+  margin-bottom: 22px;
+
+  @media (min-width: @tablet-width) {
+    .font-text(400; 17px; 30px; @base-color--lighten);
+  }
 }
 
 .modal__label-group {
+  .indent();
+  border: none;
   display: flex;
-  max-width: 350px;
+  justify-content: center;
+  max-width: 360px;
   gap: 7px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    max-width: 350px;
+  }
 }
 
 .modal__label {
@@ -82,5 +102,9 @@
 .modal__button {
   .font-text(700; 17px; 16px; @base-color--invert);
   padding: 16px 0;
-  max-width: 350px;
+  max-width: 360px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 350px;
+  }
 }
