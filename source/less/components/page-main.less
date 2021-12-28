@@ -6,17 +6,24 @@
 }
 
 .page-main__title-wrapper {
+  .flex(center; center);
   .size-width(max; @mobile-size; @mobile-padding);
-  text-align: center;
+  min-height: 177px;
 
   @media (min-width: @tablet-width) {
-    padding-top: 100px;
-    width: 100%;
+    .size-width(no-max; @tablet-size; @tablet-padding);
+    min-height: 226px;
+  }
+
+  @media (min-width: @desktop-width) {
+    .size-width(no-max; @desktop-size; @desktop-padding);
+    min-height: 255px;
   }
 }
 
 .page-main__heading {
   .font-text(700; 27px; 30px; @base-color);
+  text-align: center;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
