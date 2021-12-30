@@ -221,23 +221,29 @@
   <div class="modal modal--close">
     <div class="modal__wrapper">
       <section class="modal__content">
-        <h2 class="modal__title">Добавить в корзину</h2>
-        <p class="modal__text">Выберите размер:</p>
+        <h2 class="modal__title">Добавить<br> в корзину</h2>
 
         <form class="modal__forms" action="https://echo.htmlacademy.ru/" method="POST">
 
           <input type="hidden" name="product" value="Зайчик-попрыгайчик">
 
-          <label for="size-s" class="modal__label">S</label>
-          <input name="size" type="radio" id="size-s" value="S">
+          <fieldset class="modal__label-group">
+            <legend class="modal__text">Выберите размер:</legend>
 
-          <label for="size-m" class="modal__label">M</label>
-          <input name="size" type="radio" id="size-m" value="M">
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-s" value="S">
+            <label for="size-s" class="modal__label">S</label>
 
-          <label for="size-l" class="modal__label">L</label>
-          <input name="size" type="radio" id="size-l" value="L">
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-m" value="M">
+            <label for="size-m" class="modal__label">M</label>
 
-          <button type="submit" class="modal__button button">Добавить</button>
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-l" value="L">
+            <label for="size-l" class="modal__label">L</label>
+
+          </fieldset>
+
+          <div class="modal__wrapper-button">
+            <button type="submit" class="modal__button button button--full">Добавить</button>
+          </div>
 
         </form>
       </section>
