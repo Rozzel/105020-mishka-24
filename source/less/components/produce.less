@@ -2,13 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 58px;
+  border-top: 1px solid @base-color--3;
 }
 
 .produce__wrapper {
   display: flex;
   flex-direction: column;
   padding-top: 21px;
-  .size-width(max; @mobile-size; @mobile-padding);
+  .size-width(max; @mobile-size; 0);
 
   @media (min-width: @tablet-width) {
     .size-width(@tablet-size; @tablet-padding);
@@ -16,51 +18,81 @@
 
   @media (min-width: @desktop-width) {
     .size-width(@desktop-size; @desktop-padding);
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 
 .produce__heading {
+  position: relative;
   .font-text(700; 17px; 24px; @base-color);
-  margin-left: 91px;
   margin-bottom: 27px;
+  margin-left: @mobile-padding + 91px;
+  margin-right: 34px;
+
+  &::before {
+    position: absolute;
+    top: 8px;
+    left: -55px;
+    content: "";
+    .size(32px; 22px);
+    background: url("../img/icon/video.svg") no-repeat;
+  }
+
+  @media (min-width: @tablet-width) {
+    & br {
+      display: none;
+    }
+  }
 }
 
 .produce__video {
-  .size(260px; 150px);
-  background: url("../img/background/video-mobile.jpg") no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
+  align-self: center;
+  .size(260px; 150px);
+  background: url("../img/background/video-mobile.jpg") no-repeat center center;
+  background-size: cover;
+  margin: 0 25px;
   margin-bottom: 35px;
 
   @media (min-width: @tablet-width) {
-    order: -1;
-  }
-
-  @media (min-width: @tablet-width) {
     .size(668px; 445px);
-  }
-
-  @media (min-width: @desktop-width) {
-    .size(682px; 445px);
+    order: -1;
   }
 }
 
 .produce__play-button {
+  cursor: pointer;
   border: none;
   background-color: transparent;
   padding: 0;
+
+  & svg {
+    &:hover {
+      transform: scale(120%);
+    }
+
+    &:active {
+      transform: scale(80%);
+      opacity: 70%;
+    }
+  }
 }
 
 .produce__description {
-  margin-left: 34px;
+  .font-text(400; 13px; 24px; @base-color--lighten);
+  margin-left: @mobile-padding + 34px;
+  margin-right: @mobile-padding;
   margin-bottom: 41px;
+}
+
+.produce__order {
+  border-bottom: 1px solid @base-color--3;
+  margin: 0 @mobile-padding;
 }
 
 .produce__order-button {
   text-align: center;
-  padding: 18px 27px;
-  margin-bottom: 109px;
+  padding: 18px 0;
+  margin: 0 34px;
+  margin-bottom: 33px;
 }
