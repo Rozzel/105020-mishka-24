@@ -80,7 +80,7 @@
 
             <legend class="knitting__group-name">Тип</legend>
 
-            <input class="knitting__input" type="radio" id="knitting-accessory" name="knitting-type" value="Аксессуар для интерьера">
+            <input class="knitting__input" type="radio" id="knitting-accessory" name="knitting-type" value="Аксессуар для интерьера" checked>
             <label class="knitting__label" for="knitting-accessory">Аксессуар для<br class="br br--mobile"> интерьера</label>
 
             <input class="knitting__input" type="radio" id="knitting-toy" name="knitting-type" value="Детская игрушка">
@@ -111,7 +111,8 @@
               <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
             </fieldset>
           </div>
-          <fieldset class="knitting__group">
+
+          <fieldset class="knitting__group knitting__group--text">
 
             <legend class="knitting__group-name">ФИО</legend>
 
@@ -127,24 +128,24 @@
           </fieldset>
 
           <div class="knitting__group-wrapper-dark">
-            <fieldset class="knitting__group">
+            <fieldset class="knitting__group knitting__group--solo">
 
               <legend class="knitting__group-name">Тел</legend>
-              <input class="knitting__input knitting__input--tel" type="tel" id="knitting-tel" name="knitting-tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*" aria-label="Укажите номер телефона" required>
+              <input class="knitting__input" type="tel" id="knitting-tel" name="knitting-tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*" aria-label="Укажите номер телефона" required>
 
             </fieldset>
           </div>
 
           <div class="knitting__group-wrapper-dark">
-            <fieldset class="knitting__group">
+            <fieldset class="knitting__group knitting__group--solo">
 
               <legend class="knitting__group-name">E-mail</legend>
-              <input class="knitting__input knitting__input--email" type="email" id="knitting-email" name="knitting-email" placeholder="Ваш Email*" aria-label="Укажите адрес электронной почты" required>
+              <input class="knitting__input" type="email" id="knitting-email" name="knitting-email" placeholder="Ваш Email*" aria-label="Укажите адрес электронной почты" required>
 
             </fieldset>
           </div>
 
-          <fieldset class="knitting__group">
+          <fieldset class="knitting__group knitting__group--textarea">
 
             <legend class="knitting__group-name">Доп</legend>
             <textarea class="knitting__textarea" name="knitting-textarea" placeholder="Опишите все ваши пожелания к заказу" aria-label="Пожелания к заказу"></textarea>
@@ -153,7 +154,7 @@
 
           <div class="knitting__send">
             <div class="knitting__send-wrapper">
-              <small class="knitting__required-fields">*Поля обязательны для заполнения</small>
+              <small class="knitting__required-fields">Поля обязательны для заполнения</small>
 
               <button class="knitting__button button" type="submit">Отправить заказ</button>
             </div>

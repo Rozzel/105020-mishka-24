@@ -9,31 +9,50 @@
   .size-width(max; @mobile-size; @mobile-padding);
 }
 
+.knitting__form {
+  .indent();
+}
+
 .knitting__wrapper-greeting-text {
-  .size-width(max; @mobile-size; @mobile-padding);
-  margin: 0 auto;
-
-  @media (min-width: @tablet-width) {
-    .size-width(no-max; @tablet-size; @tablet-padding);
-  }
-
-  @media (min-width: @desktop-width) {
-    .size-width(@desktop-size; @desktop-padding);
-  }
+  width: 100%;
 }
 
 .knitting__group {
   display: flex;
   flex-direction: column;
   gap: 44px;
+  .indent();
   border: none;
   margin-bottom: 43px;
+
+  &--text {
+    gap: 0;
+
+    & .knitting__label:not(:first-of-type) {
+      margin-top: 22px;
+    }
+  }
+
+  &--solo {
+    & .knitting__group-name {
+      margin-bottom: 0;
+    }
+  }
+
+  &--textarea {
+    margin-bottom: 0;
+
+    & .knitting__group-name {
+      margin-bottom: 22px;
+    }
+  }
 }
 
 .knitting__group-name {
   .font-text(700; 17px; 16px; @brand-color--1);
   display: flex;
   text-transform: uppercase;
+  white-space: nowrap;
   width: 100%;
   margin-bottom: 35px;
 
@@ -76,15 +95,9 @@
 .knitting__label {
   .font-text(700; 17px; 18px; @base-color);
   position: relative;
-  cursor: pointer;
 }
 
 .knitting__input {
-  &--tel,
-  &--email {
-    grid-column: span 2;
-  }
-
   &[type="radio"],
   &[type="checkbox"] {
     .visually-hidden();
@@ -93,6 +106,7 @@
   &[type="radio"] + .knitting__label,
   &[type="checkbox"] + .knitting__label {
     margin-left: 61px;
+    cursor: pointer;
 
     &:hover::before {
       border: 2px solid @brand-color--3;
@@ -142,10 +156,34 @@
     .size(28px; 28px);
     background: url("../img/icon/form/check-m.svg") no-repeat;
   }
+
+  &[type="text"],
+  &[type="tel"],
+  &[type="email"] {
+    .font(@font-name; @font-url);
+    .font-text(400; 17px; 17px; @base-color--lighten);
+    border: none;
+    padding: 17px 2px;
+    border-bottom: 2px solid @base-color;
+  }
+
+  &[type="tel"] {
+    padding-right: 35px;
+    background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right 5px;
+  }
+
+  &[type="email"] {
+    padding-right: 45px;
+    background: url("../img/icon/form/mail.svg") no-repeat bottom 17px right 5px;
+  }
 }
 
 .knitting__textarea {
-  grid-column: span 2;
+  .font(@font-name; @font-url);
+  .font-text(400; 17px; 18px; @base-color--lighten);
+  min-height: 142px;
+  padding: 17px;
+  border: 2px solid @base-color--lighten;
 }
 
 .knitting__send {
@@ -157,22 +195,17 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  .size-width(max; @mobile-size; @mobile-padding);
-
-  @media (min-width: @tablet-width) {
-    width: @tablet-size;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  @media (min-width: @desktop-width) {
-    width: @desktop-size;
-  }
 }
 
 .knitting__required-fields {
+  .font-text(400; 14px; 16px; @base-color--lighten);
+  width: 100%;
   margin-top: 17px;
   margin-bottom: 30px;
+
+  &::before {
+    content: "*";
+  }
 }
 
 .knitting__button {
