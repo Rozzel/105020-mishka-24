@@ -157,6 +157,13 @@
     background: url("../img/icon/form/check-m.svg") no-repeat;
   }
 
+  &[type="radio"]:focus + .knitting__label,
+  &[type="checkbox"]:focus + .knitting__label {
+    &::before {
+      border: 2px solid @brand-color--3;
+    }
+  }
+
   &[type="text"],
   &[type="tel"],
   &[type="email"] {
@@ -165,16 +172,40 @@
     border: none;
     padding: 17px 2px;
     border-bottom: 2px solid @base-color;
+
+    &::placeholder {
+      color: fade(@base-color, 30%);
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 2px solid @brand-color--3;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid @brand-color--3;
+    }
   }
 
   &[type="tel"] {
     padding-right: 35px;
     background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right 5px;
+
+    &:hover,
+    &:active {
+      background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px right 5px;
+    }
   }
 
   &[type="email"] {
     padding-right: 45px;
     background: url("../img/icon/form/mail.svg") no-repeat bottom 17px right 5px;
+
+    &:hover,
+    &:active {
+      background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px right 5px;
+    }
   }
 }
 
@@ -184,6 +215,20 @@
   min-height: 142px;
   padding: 17px;
   border: 2px solid @base-color--lighten;
+
+  &::placeholder {
+    color: fade(@base-color, 30%);
+  }
+
+  &:hover,
+  &:active {
+    border: 2px solid @brand-color--3;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid @brand-color--3;
+  }
 }
 
 .knitting__send {
