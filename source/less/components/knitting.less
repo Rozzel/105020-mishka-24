@@ -160,7 +160,7 @@
   &[type="text"],
   &[type="tel"],
   &[type="email"] {
-    .font(@font-name; @font-url);
+    font-family: @font-name, @specify-families;
     .font-text(400; 17px; 17px; @base-color--lighten);
     border: none;
     padding: 17px 2px;
@@ -179,7 +179,7 @@
 }
 
 .knitting__textarea {
-  .font(@font-name; @font-url);
+  font-family: @font-name, @specify-families;
   .font-text(400; 17px; 18px; @base-color--lighten);
   min-height: 142px;
   padding: 17px;
