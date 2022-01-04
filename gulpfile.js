@@ -28,6 +28,7 @@ const server = (done) => {
     cors: true,
     notify: false,
     ui: false,
+    external: "http://192.168.1.69:3000",
   });
   done();
 }
