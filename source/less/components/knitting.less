@@ -7,14 +7,33 @@
 .knitting__wrapper {
   padding-top: 17px;
   .size-width(max; @mobile-size; @mobile-padding);
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .size-width(no-max; 100%; 0);
+    padding-top: 54px;
+  }
 }
 
 .knitting__form {
   .indent();
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .knitting__wrapper-greeting-text {
   width: 100%;
+
+  @media (min-width: @tablet-width) {
+    .size-width(@tablet-size; @tablet-padding);
+  }
 }
 
 .knitting__group {
@@ -46,6 +65,19 @@
       margin-bottom: 22px;
     }
   }
+
+  @media (min-width: @tablet-width) {
+    .size-width(@tablet-size; @tablet-padding);
+  }
+}
+
+.knitting__group-wrapper-dark {
+  @media (min-width: @tablet-width) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: @base-color--1;
+  }
 }
 
 .knitting__group-name {
@@ -69,12 +101,6 @@
     @media (min-width: @tablet-width) {
       display: none;
     }
-  }
-}
-
-.knitting__group-wrapper-dark {
-  @media (min-width: @tablet-width) {
-    background-color: @base-color--1;
   }
 }
 
@@ -190,11 +216,13 @@
 
   &[type="tel"] {
     padding-right: 35px;
-    background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right 5px;
+    background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right
+      5px;
 
     &:hover,
     &:active {
-      background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px right 5px;
+      background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px
+        right 5px;
     }
   }
 
@@ -204,7 +232,8 @@
 
     &:hover,
     &:active {
-      background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px right 5px;
+      background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px
+        right 5px;
     }
   }
 }
