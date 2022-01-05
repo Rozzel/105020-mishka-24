@@ -50,6 +50,12 @@
     & .knitting__label:not(:first-of-type) {
       margin-top: 22px;
     }
+
+    @media (min-width: @tablet-width) {
+      & .knitting__group-name {
+        top: 70px;
+      }
+    }
   }
 
   &--solo {
@@ -67,7 +73,59 @@
   }
 
   @media (min-width: @tablet-width) {
+    position: relative;
     .size-width(@tablet-size; @tablet-padding);
+    margin-bottom: 0;
+    padding: 50px 0;
+
+    &--solo-bottom {
+      padding-bottom: 12px;
+    }
+
+    &--solo-top {
+      padding-top: 12px;
+    }
+  }
+}
+
+.knitting__label-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &--checkbox {
+    gap: 43px;
+  }
+
+  @media (min-width: @tablet-width) {
+    gap: 58px;
+    padding-left: 169px;
+
+    &--checkbox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+      row-gap: 56px;
+    }
+
+    &--text {
+      gap: 0;
+    }
+  }
+}
+
+.knitting__input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 25px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -102,6 +160,11 @@
       display: none;
     }
   }
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    width: 100px;
+  }
 }
 
 .knitting__greeting-text {
@@ -124,6 +187,9 @@
 }
 
 .knitting__input {
+  width: 100%;
+  box-sizing: border-box;
+
   &[type="radio"],
   &[type="checkbox"] {
     .visually-hidden();

@@ -80,11 +80,13 @@
 
             <legend class="knitting__group-name">Тип</legend>
 
-            <input class="knitting__input" type="radio" id="knitting-accessory" name="knitting-type" value="Аксессуар для интерьера" checked>
-            <label class="knitting__label" for="knitting-accessory">Аксессуар для<br class="br br--mobile"> интерьера</label>
+            <div class="knitting__label-wrapper">
+              <input class="knitting__input" type="radio" id="knitting-accessory" name="knitting-type" value="Аксессуар для интерьера" checked>
+              <label class="knitting__label" for="knitting-accessory">Аксессуар для<br class="br br--mobile"> интерьера</label>
 
-            <input class="knitting__input" type="radio" id="knitting-toy" name="knitting-type" value="Детская игрушка">
-            <label class="knitting__label" for="knitting-toy">Детская игрушка</label>
+              <input class="knitting__input" type="radio" id="knitting-toy" name="knitting-type" value="Детская игрушка">
+              <label class="knitting__label" for="knitting-toy">Детская игрушка</label>
+            </div>
 
           </fieldset>
 
@@ -92,43 +94,53 @@
             <fieldset class="knitting__group">
               <legend class="knitting__group-name">Цвет</legend>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-white" name="knitting-color-white" value="Белый" checked>
-              <label class="knitting__label" for="knitting-color-white">Белый</label>
+              <div class="knitting__label-wrapper knitting__label-wrapper--checkbox">
+                <input class="knitting__input" type="checkbox" id="knitting-color-white" name="knitting-color-white" value="Белый" checked>
+                <label class="knitting__label" for="knitting-color-white">Белый</label>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-gray" name="knitting-color-gray" value="Серый" checked>
-              <label class="knitting__label" for="knitting-color-gray">Серый</label>
+                <input class="knitting__input" type="checkbox" id="knitting-color-gray" name="knitting-color-gray" value="Серый" checked>
+                <label class="knitting__label" for="knitting-color-gray">Серый</label>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-tiffany" name="knitting-color-tiffany" value="Тиффани">
-              <label class="knitting__label" for="knitting-color-tiffany">Тиффани</label>
+                <input class="knitting__input" type="checkbox" id="knitting-color-tiffany" name="knitting-color-tiffany" value="Тиффани">
+                <label class="knitting__label" for="knitting-color-tiffany">Тиффани</label>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-black" name="knitting-color-black" value="Черный">
-              <label class="knitting__label" for="knitting-color-black">Черный</label>
+                <input class="knitting__input" type="checkbox" id="knitting-color-black" name="knitting-color-black" value="Черный">
+                <label class="knitting__label" for="knitting-color-black">Черный</label>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-pink" name="knitting-color-pink" value="Розовый">
-              <label class="knitting__label" for="knitting-color-pink">Розовый</label>
+                <input class="knitting__input" type="checkbox" id="knitting-color-pink" name="knitting-color-pink" value="Розовый">
+                <label class="knitting__label" for="knitting-color-pink">Розовый</label>
 
-              <input class="knitting__input" type="checkbox" id="knitting-color-orange" name="knitting-color-orange" value="Оранжевый">
-              <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
+                <input class="knitting__input" type="checkbox" id="knitting-color-orange" name="knitting-color-orange" value="Оранжевый">
+                <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
+              </div>
             </fieldset>
           </div>
 
           <fieldset class="knitting__group knitting__group--text">
 
             <legend class="knitting__group-name">ФИО</legend>
+            <div class="knitting__label-wrapper knitting__label-wrapper--text">
 
-            <label class="knitting__label" for="knitting-name">Имя:</label>
-            <input class="knitting__input" type="text" id="knitting-name" name="knitting-name" placeholder="Введите ваше имя*" required>
+              <div class="knitting__input-wrapper">
+                <label class="knitting__label" for="knitting-name">Имя:</label>
+                <input class="knitting__input" type="text" id="knitting-name" name="knitting-name" placeholder="Введите ваше имя*" required>
+              </div>
 
-            <label class="knitting__label" for="knitting-surname">Фамилия:</label>
-            <input class="knitting__input" type="text" id="knitting-surname" name="knitting-surname" placeholder="Укажите фамилию*" required>
+              <div class="knitting__input-wrapper">
+                <label class="knitting__label" for="knitting-surname">Фамилия:</label>
+                <input class="knitting__input" type="text" id="knitting-surname" name="knitting-surname" placeholder="Укажите фамилию*" required>
+              </div>
 
-            <label class="knitting__label" for="knitting-middlename">Отчество:</label>
-            <input class="knitting__input" type="text" id="knitting-middlename" name="knitting-middlename" placeholder="Отчество, если желаете">
+              <div class="knitting__input-wrapper">
+                <label class="knitting__label" for="knitting-middlename">Отчество:</label>
+                <input class="knitting__input" type="text" id="knitting-middlename" name="knitting-middlename" placeholder="Отчество, если желаете">
+              </div>
+            </div>
 
           </fieldset>
 
           <div class="knitting__group-wrapper-dark">
-            <fieldset class="knitting__group knitting__group--solo">
+            <fieldset class="knitting__group knitting__group--solo knitting__group--solo-bottom">
 
               <legend class="knitting__group-name">Тел</legend>
               <input class="knitting__input" type="tel" id="knitting-tel" name="knitting-tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*" aria-label="Укажите номер телефона" required>
@@ -137,7 +149,7 @@
           </div>
 
           <div class="knitting__group-wrapper-dark">
-            <fieldset class="knitting__group knitting__group--solo">
+            <fieldset class="knitting__group knitting__group--solo knitting__group--solo-top">
 
               <legend class="knitting__group-name">E-mail</legend>
               <input class="knitting__input" type="email" id="knitting-email" name="knitting-email" placeholder="Ваш Email*" aria-label="Укажите адрес электронной почты" required>
