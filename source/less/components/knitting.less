@@ -34,6 +34,10 @@
   @media (min-width: @tablet-width) {
     .size-width(@tablet-size; @tablet-padding);
   }
+
+  @media (min-width: @desktop-width) {
+    .size-width(@desktop-size; @desktop-padding);
+  }
 }
 
 .knitting__group {
@@ -50,12 +54,6 @@
     & .knitting__label:not(:first-of-type) {
       margin-top: 22px;
     }
-
-    @media (min-width: @tablet-width) {
-      & .knitting__group-name {
-        top: 70px;
-      }
-    }
   }
 
   &--solo {
@@ -71,8 +69,9 @@
       margin-bottom: 22px;
 
       @media (min-width: @tablet-width) {
-        top: 70px;
         margin-bottom: 0;
+        min-height: 55px;
+        align-items: center;
       }
     }
   }
@@ -81,22 +80,41 @@
     position: relative;
     .size-width(@tablet-size; @tablet-padding);
     margin-bottom: 0;
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     &--solo-bottom {
       padding-bottom: 12px;
-
-      & .knitting__group-name {
-        top: 70px;
-      }
     }
 
     &--solo-top {
       padding-top: 12px;
+    }
 
+    &--radio {
+      padding-bottom: 67px;
+    }
+
+    &--solo,
+    &--text {
       & .knitting__group-name {
-        top: 33px;
+        min-height: 61px;
+        align-items: center;
       }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .size-width(@desktop-size; @desktop-padding);
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &--solo-bottom {
+      padding-bottom: 24px;
+    }
+
+    &--solo-top {
+      padding-top: 0;
     }
   }
 }
@@ -125,6 +143,14 @@
       gap: 0;
     }
   }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 175px;
+
+    &--checkbox {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 .knitting__input-wrapper {
@@ -139,6 +165,10 @@
     &:not(:last-of-type) {
       margin-bottom: 24px;
     }
+  }
+
+  @media (min-width: @desktop-width) {
+    .size-width(700px; 0);
   }
 }
 
@@ -178,6 +208,10 @@
     position: absolute;
     width: 100px;
   }
+
+  @media (min-width: @desktop-width) {
+    left: 100px;
+  }
 }
 
 .knitting__greeting-text {
@@ -190,6 +224,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    padding-left: 175px;
     max-width: 700px;
   }
 }
@@ -197,6 +232,10 @@
 .knitting__label {
   .font-text(700; 17px; 18px; @base-color);
   position: relative;
+
+  @media (min-width: @tablet-width) {
+    .font-text(700; 19px; 18px; @base-color);
+  }
 }
 
 .knitting__input {
@@ -275,7 +314,7 @@
     font-family: @font-name, @specify-families;
     .font-text(400; 17px; 17px; @base-color--lighten);
     border: none;
-    padding: 17px 2px;
+    padding: 17px 10px 17px 2px;
     border-bottom: 2px solid @base-color;
 
     &::placeholder {
@@ -290,6 +329,11 @@
     &:focus {
       outline: none;
       border-bottom: 2px solid @brand-color--3;
+    }
+
+    @media (min-width: @tablet-width) {
+      .font-text(400; 19px; 18px; @base-color--lighten);
+      padding: 17px;
     }
   }
 
@@ -320,8 +364,8 @@
 .knitting__textarea {
   font-family: @font-name, @specify-families;
   .font-text(400; 17px; 18px; @base-color--lighten);
-  min-height: 142px;
   padding: 17px;
+  min-height: 142px - 17px * 2;
   border: 2px solid @base-color--lighten;
 
   &::placeholder {
@@ -337,11 +381,27 @@
     outline: none;
     border: 2px solid @brand-color--3;
   }
+
+  @media (min-width: @tablet-width) {
+    .font-text(400; 19px; 18px; @base-color--lighten);
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 700px - 17px * 2;
+  }
 }
 
 .knitting__ {
   width: 100%;
   margin-bottom: 55px;
+}
+
+.knitting__send {
+  width: 100%;
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 50px;
+  }
 }
 
 .knitting__send-wrapper {
@@ -357,6 +417,10 @@
     grid-template-columns: 1fr 1fr;
     padding-bottom: 50px;
   }
+
+  @media (min-width: @desktop-width) {
+    .size-width(700px; 0);
+  }
 }
 
 .knitting__required-fields {
@@ -370,6 +434,7 @@
   }
 
   @media (min-width: @tablet-width) {
+    .font-text(400; 17px; 30px; @base-color--lighten);
     text-align: right;
     margin: 0;
   }
@@ -383,11 +448,6 @@
   @media (min-width: @tablet-width) {
     width: fit-content;
     order: -1;
-    padding: 18px 32px;
-  }
-
-  @media (min-width: @desktop-width) {
-    order: -1;
-    padding: 18px 17px;
+    padding: 18px 34px;
   }
 }
