@@ -101,11 +101,19 @@
     </section>
 
     <section class="product-week divider divider--zigzag">
-      <div class="product-week__wrapper ">
+      <div class="product-week__wrapper">
 
         <p class="product-week__title">Товар недели</p>
         <h2 class="product-week__product-title">Вязаные корзинки</h2>
-        <div class="product-week__images"><img src="img/catalog/triple-mobile.jpg" alt="Вязаные корзинки" width="260" height="315"></div>
+
+        <div class="product-week__images">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/catalog/triple-desktop.jpg 1x, img/catalog/triple-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/catalog/triple-tablet.jpg 1x, img/catalog/triple-tablet@2x.jpg 2x">
+            <img src="img/catalog/triple-mobile.jpg" srcset="img/catalog/triple-mobile@2x.jpg 2x" alt="Вязаные корзинки" width="260" height="315">
+          </picture>
+        </div>
+
         <p class="product-week__product-text">
           Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.
         </p>

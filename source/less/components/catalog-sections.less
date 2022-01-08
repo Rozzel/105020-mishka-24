@@ -16,13 +16,26 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: 65px;
-  background: url("../img/background/hero-mobile.jpg") no-repeat top -20px center;
+  background-image: url("../img/background/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top -25px center;
   min-height: 415px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/background/hero-mobile@2x.jpg");
+    background-size: 320px auto;
+  }
 
   @media (min-width: @tablet-width) {
     padding-top: 70px;
     min-height: 545px;
-    background: url("../img/background/hero-desktop.jpg") no-repeat top -90px center;
+    background-image: url("../img/background/hero-tablet.jpg");
+    background-position: top -80px center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/background/hero-tablet@2x.jpg");
+      background-size: 768px auto;
+    }
   }
 }
 
