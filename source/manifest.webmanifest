@@ -1,0 +1,10 @@
+{
+  "name": "Интернет-магазин ручных изделий для дома: Мишка",
+  "short_name": "Мишка",
+  "description": "Магазин подарков ручной работы Мишка, предлагает купить авторские изделия.",
+  "theme_color": "#56c3b2",
+  "icons": [
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
