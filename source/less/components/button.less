@@ -26,7 +26,7 @@
   }
 
   &:active {
-    color: fade(@base-color--invert, 30%);
+    color: rgba(@base-color--invert, 30%);
   }
 
   &__arrow {
@@ -38,7 +38,7 @@
     padding: 26px 26px;
 
     @media (min-width: @tablet-width) {
-      background-color: fade(@base-color--invert, 0%);
+      background-color: rgba(@base-color--invert, 0%);
       border: none;
       padding: 0;
     }
@@ -56,15 +56,15 @@
     }
 
     &:hover {
-      background-color: fade(@base-color--invert, 0%);
+      background-color: rgba(@base-color--invert, 0%);
     }
 
     &:hover svg {
-      fill: fade(@base-color, 60%);
+      fill: rgba(@base-color, 60%);
     }
 
     &:active svg {
-      fill: fade(@base-color, 30%);
+      fill: rgba(@base-color, 30%);
     }
   }
 
