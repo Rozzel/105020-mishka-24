@@ -118,12 +118,6 @@
   margin-bottom: 26px;
   order: 1;
 
-  & img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
   @media (min-width: @tablet-width) {
     .grid-cr(span 2; 2 / 6);
     margin: 0;
@@ -136,6 +130,12 @@
     margin: 0;
     justify-self: flex-end;
   }
+}
+
+.product-week__images img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .product-week__price {

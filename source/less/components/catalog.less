@@ -155,18 +155,12 @@
   fill: rgba(@base-color, 20%);
 }
 
-.catalog__add {
-  &:hover {
-    & .catalog__basket-icon {
-      fill: @brand-color--1;
-    }
-  }
+.catalog__add:hover .catalog__basket-icon {
+  fill: @brand-color--1;
+}
 
-  &:active {
-    & .catalog__basket-icon {
-      fill: rgba(@brand-color--1, 30%);
-    }
-  }
+.catalog__add:active .catalog__basket-icon {
+  fill: rgba(@brand-color--1, 30%);
 }
 
 .catalog__specifications {
