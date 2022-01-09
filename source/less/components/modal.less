@@ -80,14 +80,12 @@
   }
 }
 
-.modal__input {
-  &:checked + .modal__label {
-    border: 2px solid @brand-color--1;
-  }
+.modal__input:checked + .modal__label {
+  border: 2px solid @brand-color--1;
+}
 
-  &:focus + .modal__label {
-    border: 2px solid @brand-color--1;
-  }
+.modal__input:focus + .modal__label {
+  border: 2px solid @brand-color--1;
 }
 
 .modal__wrapper-button {
