@@ -57,7 +57,7 @@
       "img name"
       "img spec"
       "img price";
-    border: 1px solid @base-color--3;
+    outline: 1px solid @base-color--3;
   }
 
   @media (min-width: @desktop-width) {
@@ -122,6 +122,8 @@
       .size(334px; 334px);
       position: relative;
       overflow: hidden;
+      outline: 2px solid @base-color--3;
+      outline-offset: -1px;
     }
 
     @media (min-width: @desktop-width) {
@@ -133,6 +135,7 @@
 .catalog__image {
   .size(100%; auto);
   margin: 0 auto;
+  background-color: @base-color--1;
 
   @media (min-width: @tablet-width) {
     .size(334px; 334px);
