@@ -20,6 +20,11 @@
     color: @base-color--invert;
   }
 
+  &:focus {
+    outline: 2px solid @brand-color--3;
+    outline-offset: -2px;
+  }
+
   &:active {
     color: fade(@base-color--invert, 30%);
   }
@@ -60,6 +65,16 @@
 
     &:active svg {
       fill: fade(@base-color, 30%);
+    }
+  }
+
+  &--full {
+    background-color: @brand-color--1;
+    border: 2px solid @brand-color--1;
+    color: @base-color--invert;
+
+    &:hover {
+      border: 2px solid @base-color--lighten;
     }
   }
 }

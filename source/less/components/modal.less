@@ -1,7 +1,14 @@
 .modal {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .flex(center; center);
+  .size(100%; 100%);
+  .indent();
+  z-index: 3;
+  background-color: fade(@base-color--invert, 90%);
 }
 
 .modal--close {
@@ -9,10 +16,14 @@
 }
 
 .modal__wrapper {
-  .size-width(max; @mobile-size; @mobile-padding);
+  .size-width(100%; @mobile-padding);
+  background-color: @base-color--invert;
+  padding-top: 30px;
+  padding-bottom: 46px;
+  box-shadow: 0 5px 10px fade(@shadow-color--1, 25%);
 
   @media (min-width: @tablet-width) {
-    width: 556px;
+    .size-width(566px; @tablet-padding);
   }
 }
 
@@ -23,24 +34,73 @@
 
 .modal__title {
   .font-text(700; 25px; 30px; @base-color);
-  margin: 0 50px;
+  width: 100%;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 14px;
-  width: 165px;
+
+  @media (min-width: @tablet-width) {
+    .font-text(700; 30px; 57px; @base-color);
+  }
 }
 
 .modal__text {
-  .font-text(400; 15px; 30px);
+  .font-text(400; 15px; 30px; @base-color--lighten);
   text-align: center;
+  margin-bottom: 22px;
+
+  @media (min-width: @tablet-width) {
+    .font-text(400; 17px; 30px; @base-color--lighten);
+  }
 }
 
-.modal__forms {
-  text-align: center;
+.modal__label-group {
+  .indent();
+  border: none;
+  display: flex;
+  justify-content: center;
+  max-width: 360px;
+  gap: 7px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    max-width: 350px;
+  }
+}
+
+.modal__label {
+  .font-text(700; 17px; 16px; @base-color--lighten);
+  .size(100%; 52px);
+  border: 2px solid fade(@base-color--lighten, 10%);
+  .flex(center; center);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid fade(@base-color--lighten, 30%);
+  }
+}
+
+.modal__input {
+  &:checked + .modal__label {
+    border: 2px solid @brand-color--1;
+  }
+
+  &:focus + .modal__label {
+    border: 2px solid @brand-color--1;
+  }
+}
+
+.modal__wrapper-button {
+  .flex(center; flex-end);
+  padding-top: 31px;
 }
 
 .modal__button {
-  margin-top: 31px;
+  .font-text(700; 17px; 16px; @base-color--invert);
   padding: 16px 0;
-  text-align: center;
+  max-width: 360px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 350px;
+  }
 }

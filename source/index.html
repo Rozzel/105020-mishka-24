@@ -25,30 +25,30 @@
         <div class="main-nav__wrapper">
 
           <ul class="main-nav__list">
-            <li class="main-nav__item"><a href="catalog.html">Каталог товаров</a></li>
-            <li class="main-nav__item"><a href="form.html">Вязание на заказ</a></li>
-            <li class="main-nav__item main-nav__item--desktop"><a href="#">Новые поступления</a></li>
-            <li class="main-nav__item main-nav__item--desktop"><a href="#">Распродажа</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Каталог товаров</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="form.html">Вязание на заказ</a></li>
+            <li class="main-nav__item main-nav__item--desktop"><a class="main-nav__link" href="#">Новые поступления</a></li>
+            <li class="main-nav__item main-nav__item--desktop"><a class="main-nav__link" href="#">Распродажа</a></li>
           </ul>
 
           <ul class="main-nav__list-user">
             <li class="main-nav__item main-nav__item--search">
-              <a href="#">
+              <a class="main-nav__link" href="#">
                 <svg width="18" height="18" viewBox="0 0 18 18">
-                  <use xlink:href="../img/sprite.svg#search"></use>
+                  <use xlink:href="img/sprite.svg#search"></use>
                 </svg>
                 <span>Поиск по сайту</span>
               </a>
             </li>
             <li class="main-nav__item main-nav__item--cart">
-              <a href="#">
+              <a class="main-nav__link" href="#">
                 <svg width="20" height="19" viewBox="0 0 20 19">
-                  <use xlink:href="../img/sprite.svg#cart"></use>
+                  <use xlink:href="img/sprite.svg#cart"></use>
                 </svg>
                 Корзина: пока пуста
               </a>
             </li>
-            <li class="main-nav__item main-nav__item--tablet"><a href="#">Бесплатная доставка по России</a></li>
+            <li class="main-nav__item main-nav__item--tablet"><a class="main-nav__link" href="#">Бесплатная доставка по России</a></li>
           </ul>
 
         </div>
@@ -66,7 +66,7 @@
       <div class="catalog-sections__wrapper-zigzag divider divider--line">
         <div class="catalog-sections__wrapper">
 
-          <h2 class="catalog-sections__title catalog-sections__title--center">Милые штуки<br> ручной<br> работы для дома</h2>
+          <h2 class="catalog-sections__title catalog-sections__title--center">Милые штуки<br class="br br--mobile"> ручной<br> работы для дома</h2>
 
           <ul class="catalog-sections__list">
             <li class="catalog-sections__item">
@@ -154,7 +154,7 @@
               <a href="#" class="reviews__author-contact" target="_blank">@misssssiskras</a>
             </div>
           </blockquote>
-          <!-- toDo -->
+
           <blockquote class="reviews__item reviews__item--off slider__item">
             <div class="reviews__author-info">
               <p class="reviews__author-name">Елена Красильникова</p>
@@ -178,9 +178,9 @@
         </div>
 
         <div class="reviews__wraper-button">
-          <button class="slider__button-prev button button__arrow button__arrow" type="button" aria-label="Предыдущий отзыв">
+          <button class="slider__button-prev button button__arrow" type="button" aria-label="Предыдущий отзыв">
             <svg width="50" height="26" viewBox="0 0 50 26">
-              <use xlink:href="../img/sprite.svg#huge-arrow"></use>
+              <use xlink:href="img/sprite.svg#huge-arrow"></use>
             </svg>
           </button>
           <button class="slider__button-next button button__arrow button__arrow--right" type="button" aria-label="Следующий отзыв">
@@ -198,7 +198,7 @@
         <h2 class="contacts__title">Контакты</h2>
         <p class="contacts__data">
           <span>e-mail:</span>
-          <span><a href="mailto:info@mimimishkashop.ru" class="contacts__link">info@mimimishkashop.ru</a></span>
+          <span><a href="mailto:info@mimimishkashop.ru" class="mail-link">info@mimimishkashop.ru</a></span>
           <span>адрес:</span>
           <span>г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</span>
         </p>
@@ -224,7 +224,7 @@
       <div class="page-footer__logo">
         <a class="page-footer__logo-link">
           <svg width="86" height="35" viewBox="0 0 86 35" aria-label="Логотип интернет-магазин: Мишка">
-            <use xlink:href="../img/sprite.svg#logo-mobile"></use>
+            <use xlink:href="img/sprite.svg#logo-mobile"></use>
           </svg>
         </a>
       </div>
@@ -262,7 +262,7 @@
           <b class="page-footer__copyright-text">Разработано</b>
           <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
             <svg width="27" height="34" viewBox="5 5 50 55" aria-label="Логотип HTML Academy">
-              <use xlink:href="../img/sprite.svg#copyright"></use>
+              <use xlink:href="img/sprite.svg#copyright"></use>
             </svg>
 
           </a>
@@ -275,23 +275,29 @@
   <div class="modal modal--close">
     <div class="modal__wrapper">
       <section class="modal__content">
-        <h2 class="modal__title">Добавить в корзину</h2>
-        <p class="modal__text">Выберите размер:</p>
+        <h2 class="modal__title">Добавить<br class="br br--mobile"> в корзину</h2>
 
         <form class="modal__forms" action="https://echo.htmlacademy.ru/" method="POST">
 
           <input type="hidden" name="product" value="Вязаные корзинки">
 
-          <label for="size-s" class="modal__label">S</label>
-          <input name="size" type="radio" id="size-s" value="S">
+          <fieldset class="modal__label-group">
+            <legend class="modal__text">Выберите размер:</legend>
 
-          <label for="size-m" class="modal__label">M</label>
-          <input name="size" type="radio" id="size-m" value="M">
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-s" value="S">
+            <label for="size-s" class="modal__label">S</label>
 
-          <label for="size-l" class="modal__label">L</label>
-          <input name="size" type="radio" id="size-l" value="L">
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-m" value="M">
+            <label for="size-m" class="modal__label">M</label>
 
-          <button type="submit" class="modal__button button">Добавить</button>
+            <input class="modal__input visually-hidden" name="size" type="radio" id="size-l" value="L">
+            <label for="size-l" class="modal__label">L</label>
+
+          </fieldset>
+
+          <div class="modal__wrapper-button">
+            <button type="submit" class="modal__button button button--full">Добавить</button>
+          </div>
 
         </form>
       </section>
