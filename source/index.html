@@ -5,7 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Интернет-магазин ручных изделий для дома: Мишка</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#56c3b2">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,7 +21,11 @@
     <div class="page-header__wrapper">
 
       <a class="page-header__logo-link">
-        <img class="page-header__logo" width="86" height="35" src="img/logo/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="img/logo/mishka-logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/logo/mishka-logo-tablet.svg">
+          <img class="page-header__logo" width="86" height="35" src="img/logo/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
+        </picture>
       </a>
 
       <nav class="page-header__nav main-nav main-nav--closed main-nav--nojs">
@@ -91,11 +101,19 @@
     </section>
 
     <section class="product-week divider divider--zigzag">
-      <div class="product-week__wrapper ">
+      <div class="product-week__wrapper">
 
         <p class="product-week__title">Товар недели</p>
         <h2 class="product-week__product-title">Вязаные корзинки</h2>
-        <div class="product-week__images"><img src="img/catalog/triple-mobile.jpg" alt="Вязаные корзинки" width="260" height="315"></div>
+
+        <div class="product-week__images">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/catalog/triple-desktop.jpg 1x, img/catalog/triple-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/catalog/triple-tablet.jpg 1x, img/catalog/triple-tablet@2x.jpg 2x">
+            <img src="img/catalog/triple-mobile.jpg" srcset="img/catalog/triple-mobile@2x.jpg 2x" alt="Вязаные корзинки" width="260" height="315">
+          </picture>
+        </div>
+
         <p class="product-week__product-text">
           Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.
         </p>

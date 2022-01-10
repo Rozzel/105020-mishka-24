@@ -45,14 +45,6 @@
   margin-bottom: 22px;
   z-index: 1;
 
-  &:hover .page-header__logo {
-    opacity: 0.6;
-  }
-
-  &:active .page-header__logo {
-    opacity: 0.3;
-  }
-
   @media (min-width: @desktop-width) {
     margin-top: 9px;
   }
@@ -67,14 +59,20 @@
   }
 }
 
+.page-header__logo-link:hover .page-header__logo {
+  opacity: 0.6;
+}
+
+.page-header__logo-link:active .page-header__logo {
+  opacity: 0.3;
+}
+
 .page-header__logo {
   @media (min-width: @tablet-width) {
-    content: url("../img/logo/mishka-logo-tablet.svg");
     .size(113px; 46px);
   }
 
   @media (min-width: @desktop-width) {
-    content: url("../img/logo/mishka-logo-desktop.svg");
     .size(149px; 72px);
   }
 }

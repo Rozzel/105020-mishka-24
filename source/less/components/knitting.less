@@ -50,30 +50,10 @@
 
   &--text {
     gap: 0;
-
-    & .knitting__label:not(:first-of-type) {
-      margin-top: 22px;
-    }
-  }
-
-  &--solo {
-    & .knitting__group-name {
-      margin-bottom: 0;
-    }
   }
 
   &--textarea {
     margin-bottom: 0;
-
-    & .knitting__group-name {
-      margin-bottom: 22px;
-
-      @media (min-width: @tablet-width) {
-        margin-bottom: 0;
-        min-height: 55px;
-        align-items: center;
-      }
-    }
   }
 
   @media (min-width: @tablet-width) {
@@ -94,14 +74,6 @@
     &--radio {
       padding-bottom: 67px;
     }
-
-    &--solo,
-    &--text {
-      & .knitting__group-name {
-        min-height: 61px;
-        align-items: center;
-      }
-    }
   }
 
   @media (min-width: @desktop-width) {
@@ -117,6 +89,30 @@
       padding-top: 0;
     }
   }
+}
+
+.knitting__group--text .knitting__label:not(:first-of-type) {
+  margin-top: 22px;
+}
+
+.knitting__group--solo .knitting__group-name {
+  margin-bottom: 0;
+}
+
+.knitting__group--textarea .knitting__group-name {
+  margin-bottom: 22px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+    min-height: 55px;
+    align-items: center;
+  }
+}
+
+.knitting__group--solo .knitting__group-name,
+.knitting__group--text .knitting__group-name {
+  min-height: 61px;
+  align-items: center;
 }
 
 .knitting__label-wrapper {
@@ -241,123 +237,123 @@
 .knitting__input {
   width: 100%;
   box-sizing: border-box;
+}
 
-  &[type="radio"],
-  &[type="checkbox"] {
-    .visually-hidden();
+.knitting__input[type="radio"],
+.knitting__input[type="checkbox"] {
+  .visually-hidden();
+}
+
+.knitting__input[type="radio"] + .knitting__label,
+.knitting__input[type="checkbox"] + .knitting__label {
+  margin-left: 61px;
+  cursor: pointer;
+
+  &:hover::before {
+    border: 2px solid @brand-color--3;
   }
 
-  &[type="radio"] + .knitting__label,
-  &[type="checkbox"] + .knitting__label {
-    margin-left: 61px;
-    cursor: pointer;
-
-    &:hover::before {
-      border: 2px solid @brand-color--3;
-    }
-
-    &:active::before {
-      border: 2px solid fade(@base-color, 30%);
-    }
+  &:active::before {
+    border: 2px solid rgba(@base-color, 30%);
   }
+}
 
-  &[type="radio"] + .knitting__label {
-    &::before {
-      position: absolute;
-      top: -10px;
-      left: -61px;
-      .size(42px; 42px);
-      content: "";
-      border-radius: 50%;
-      border: 2px solid @base-color--lighten;
-    }
-  }
-
-  &[type="radio"]:checked + .knitting__label::after {
-    position: absolute;
-    content: "";
-    top: 4px;
-    left: -47px;
-    .size(18px; 18px);
-    border-radius: 50%;
-    background-color: @brand-color--3;
-  }
-
-  &[type="checkbox"] + .knitting__label::before {
+.knitting__input[type="radio"] + .knitting__label {
+  &::before {
     position: absolute;
     top: -10px;
     left: -61px;
-    .size(38px; 38px);
+    .size(42px; 42px);
     content: "";
+    border-radius: 50%;
     border: 2px solid @base-color--lighten;
   }
+}
 
-  &[type="checkbox"]:checked + .knitting__label::after {
-    position: absolute;
-    content: "";
-    top: 2px;
-    left: -50px;
-    .size(28px; 28px);
-    background: url("../img/icon/form/check-m.svg") no-repeat;
+.knitting__input[type="radio"]:checked + .knitting__label::after {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: -47px;
+  .size(18px; 18px);
+  border-radius: 50%;
+  background-color: @brand-color--3;
+}
+
+.knitting__input[type="checkbox"] + .knitting__label::before {
+  position: absolute;
+  top: -10px;
+  left: -61px;
+  .size(38px; 38px);
+  content: "";
+  border: 2px solid @base-color--lighten;
+}
+
+.knitting__input[type="checkbox"]:checked + .knitting__label::after {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: -50px;
+  .size(28px; 28px);
+  background: url("../img/icon/form/check-m.svg") no-repeat;
+}
+
+.knitting__input[type="radio"]:focus + .knitting__label,
+.knitting__input[type="checkbox"]:focus + .knitting__label {
+  &::before {
+    border: 2px solid @brand-color--3;
+  }
+}
+
+.knitting__input[type="text"],
+.knitting__input[type="tel"],
+.knitting__input[type="email"] {
+  font-family: @font-name, @specify-families;
+  .font-text(400; 17px; 17px; @base-color--lighten);
+  border: none;
+  padding: 17px 10px 17px 2px;
+  border-bottom: 2px solid @base-color;
+
+  &::placeholder {
+    color: rgba(@base-color, 30%);
   }
 
-  &[type="radio"]:focus + .knitting__label,
-  &[type="checkbox"]:focus + .knitting__label {
-    &::before {
-      border: 2px solid @brand-color--3;
-    }
+  &:hover,
+  &:active {
+    border-bottom: 2px solid @brand-color--3;
   }
 
-  &[type="text"],
-  &[type="tel"],
-  &[type="email"] {
-    font-family: @font-name, @specify-families;
-    .font-text(400; 17px; 17px; @base-color--lighten);
-    border: none;
-    padding: 17px 10px 17px 2px;
-    border-bottom: 2px solid @base-color;
-
-    &::placeholder {
-      color: fade(@base-color, 30%);
-    }
-
-    &:hover,
-    &:active {
-      border-bottom: 2px solid @brand-color--3;
-    }
-
-    &:focus {
-      outline: none;
-      border-bottom: 2px solid @brand-color--3;
-    }
-
-    @media (min-width: @tablet-width) {
-      .font-text(400; 19px; 18px; @base-color--lighten);
-      padding: 17px;
-    }
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid @brand-color--3;
   }
 
-  &[type="tel"] {
-    padding-right: 35px;
-    background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right
-      5px;
-
-    &:hover,
-    &:active {
-      background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px
-        right 5px;
-    }
+  @media (min-width: @tablet-width) {
+    .font-text(400; 19px; 18px; @base-color--lighten);
+    padding: 17px;
   }
+}
 
-  &[type="email"] {
-    padding-right: 45px;
-    background: url("../img/icon/form/mail.svg") no-repeat bottom 17px right 5px;
+.knitting__input[type="tel"] {
+  padding-right: 35px;
+  background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right
+    5px;
 
-    &:hover,
-    &:active {
-      background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px
-        right 5px;
-    }
+  &:hover,
+  &:active {
+    background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px
+      right 5px;
+  }
+}
+
+.knitting__input[type="email"] {
+  padding-right: 45px;
+  background: url("../img/icon/form/mail.svg") no-repeat bottom 17px right 5px;
+
+  &:hover,
+  &:active {
+    background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px
+      right 5px;
   }
 }
 
@@ -369,7 +365,7 @@
   border: 2px solid @base-color--lighten;
 
   &::placeholder {
-    color: fade(@base-color, 30%);
+    color: rgba(@base-color, 30%);
   }
 
   &:hover,

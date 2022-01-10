@@ -5,7 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Заказать вязание на заказ в интернет-магазине ручных изделий для дома: Мишка</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#56c3b2">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,7 +21,11 @@
     <div class="page-header__wrapper">
 
       <a class="page-header__logo-link" href="index.html">
-        <img class="page-header__logo" width="86" height="35" src="img/logo/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="img/logo/mishka-logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/logo/mishka-logo-tablet.svg">
+          <img class="page-header__logo" width="86" height="35" src="img/logo/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
+        </picture>
       </a>
 
       <nav class="page-header__nav main-nav main-nav--closed main-nav--nojs">

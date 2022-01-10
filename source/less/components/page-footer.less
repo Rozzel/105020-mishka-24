@@ -55,13 +55,17 @@
 .page-footer__social-link,
 .page-footer__copyright-link {
   .flex(center; center);
+}
 
-  & svg:hover {
+.page-footer__logo-link svg,
+.page-footer__social-link svg,
+.page-footer__copyright-link svg {
+  &:hover {
     fill: @brand-color--5;
   }
 
-  & svg:active {
-    fill: fade(@brand-color--5, 30%);
+  &:active {
+    fill: rgba(@brand-color--5, 30%);
   }
 }
 

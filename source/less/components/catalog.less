@@ -57,7 +57,7 @@
       "img name"
       "img spec"
       "img price";
-    border: 1px solid @base-color--3;
+    outline: 1px solid @base-color--3;
   }
 
   @media (min-width: @desktop-width) {
@@ -91,11 +91,11 @@
     margin-bottom: 6px;
 
     &:hover {
-      color: fade(@base-color, 60%);
+      color: rgba(@base-color, 60%);
     }
 
     &:active {
-      color: fade(@base-color, 30%);
+      color: rgba(@base-color, 30%);
     }
 
     @media (min-width: @tablet-width) {
@@ -122,6 +122,8 @@
       .size(334px; 334px);
       position: relative;
       overflow: hidden;
+      outline: 2px solid @base-color--3;
+      outline-offset: -1px;
     }
 
     @media (min-width: @desktop-width) {
@@ -133,6 +135,7 @@
 .catalog__image {
   .size(100%; auto);
   margin: 0 auto;
+  background-color: @base-color--1;
 
   @media (min-width: @tablet-width) {
     .size(334px; 334px);
@@ -149,21 +152,15 @@
 }
 
 .catalog__basket-icon {
-  fill: fade(@base-color, 20%);
+  fill: rgba(@base-color, 20%);
 }
 
-.catalog__add {
-  &:hover {
-    & .catalog__basket-icon {
-      fill: @brand-color--1;
-    }
-  }
+.catalog__add:hover .catalog__basket-icon {
+  fill: @brand-color--1;
+}
 
-  &:active {
-    & .catalog__basket-icon {
-      fill: fade(@brand-color--1, 30%);
-    }
-  }
+.catalog__add:active .catalog__basket-icon {
+  fill: rgba(@brand-color--1, 30%);
 }
 
 .catalog__specifications {

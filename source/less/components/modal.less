@@ -8,7 +8,7 @@
   .size(100%; 100%);
   .indent();
   z-index: 3;
-  background-color: fade(@base-color--invert, 90%);
+  background-color: rgba(@base-color--invert, 90%);
 }
 
 .modal--close {
@@ -20,7 +20,7 @@
   background-color: @base-color--invert;
   padding-top: 30px;
   padding-bottom: 46px;
-  box-shadow: 0 5px 10px fade(@shadow-color--1, 25%);
+  box-shadow: 0 5px 10px rgba(@shadow-color--1, 25%);
 
   @media (min-width: @tablet-width) {
     .size-width(566px; @tablet-padding);
@@ -71,23 +71,21 @@
 .modal__label {
   .font-text(700; 17px; 16px; @base-color--lighten);
   .size(100%; 52px);
-  border: 2px solid fade(@base-color--lighten, 10%);
+  border: 2px solid rgba(@base-color--lighten, 10%);
   .flex(center; center);
   cursor: pointer;
 
   &:hover {
-    border: 2px solid fade(@base-color--lighten, 30%);
+    border: 2px solid rgba(@base-color--lighten, 30%);
   }
 }
 
-.modal__input {
-  &:checked + .modal__label {
-    border: 2px solid @brand-color--1;
-  }
+.modal__input:checked + .modal__label {
+  border: 2px solid @brand-color--1;
+}
 
-  &:focus + .modal__label {
-    border: 2px solid @brand-color--1;
-  }
+.modal__input:focus + .modal__label {
+  border: 2px solid @brand-color--1;
 }
 
 .modal__wrapper-button {
