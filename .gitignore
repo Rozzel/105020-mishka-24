@@ -13,3 +13,5 @@ source/css/*.map
 Thumbs.db
 /**/pixel-perfect/
 /**/pixel-perfect.less
+build/
+
