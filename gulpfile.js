@@ -9,7 +9,8 @@ import htmlmin from "gulp-htmlmin";
 import terser from "gulp-terser";
 // import squoosh from 'gulp-libsquoosh';
 import svgo from "gulp-svgmin";
-import svgstore from 'gulp-svgstore';
+import svgstore from "gulp-svgstore";
+import replace from "gulp-replace";
 import del from "del";
 import browser from "browser-sync";
 
@@ -58,6 +59,7 @@ const sprite = () => {
         inlineSvg: true,
       })
     )
+    .pipe(replace('<g fill="none">', '<g>'))
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"));
 };
