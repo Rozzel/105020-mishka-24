@@ -5,8 +5,8 @@ import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
 import rename from "gulp-rename";
-// import htmlmin from 'gulp-htmlmin';
-// import terser from 'gulp-terser';
+import htmlmin from "gulp-htmlmin";
+import terser from "gulp-terser";
 // import squoosh from 'gulp-libsquoosh';
 // import svgo from 'gulp-svgmin';
 // import svgstore from 'gulp-svgstore';
@@ -27,13 +27,17 @@ export const styles = () => {
 
 // HTML
 const html = () => {
-  return gulp.src("source/*.html").pipe(gulp.dest("build"));
+  return gulp
+    .src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
 };
 
 // Scripts
 const scripts = () => {
   return gulp
     .src("source/js/*.js")
+    .pipe(terser())
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
@@ -41,7 +45,7 @@ const scripts = () => {
 // Copy
 const copy = (done) => {
   gulp
-    .src(["source/fonts/*.{woff2,woff}", "source/*.ico"], {
+    .src(["source/fonts/*.{woff2,woff}", "source/*.ico", "source/img/**/*.*"], {//TODO временно source/img
       base: "source",
     })
     .pipe(gulp.dest("build"));
