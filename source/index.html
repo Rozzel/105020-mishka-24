@@ -20,6 +20,27 @@
 
 <body class="page__body">
 
+
+  <picture>
+    <!-- FIXME pixel-perfect -->
+    <img src="pixel-perfect/index-mobile.png" class="pixel-perfect" />
+    <script>
+      if (document.location.hash === "#pp")
+        document.querySelector(".pixel-perfect").style.display = "block";
+    </script>
+    <style>
+      .pixel-perfect {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+        filter: invert(100%);
+        display: none;
+      }
+    </style>
+  </picture>
+
   <header class="page-header">
     <div class="page-header__wrapper">
 

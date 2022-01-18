@@ -68,10 +68,12 @@ const htmlBuild = () => {
 const scripts = () => {
   return gulp
     .src("source/js/*.js")
-    .pipe(rename(function (path) {
-      path.basename += ".min";
-      path.extname = ".js";
-    }))
+    .pipe(
+      rename(function (path) {
+        path.basename += ".min";
+        path.extname = ".js";
+      })
+    )
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
@@ -80,10 +82,12 @@ const scriptsBuild = () => {
   return gulp
     .src("source/js/*.js")
     .pipe(terser())
-        .pipe(rename(function (path) {
-      path.basename += ".min";
-      path.extname = ".js";
-    }))
+    .pipe(
+      rename(function (path) {
+        path.basename += ".min";
+        path.extname = ".js";
+      })
+    )
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
@@ -97,7 +101,7 @@ const optimizeImages = () => {
 };
 
 const copyImages = () => {
-  return gulp.src("source/img/**/*.{png,jpg}").pipe(gulp.dest("build/img"));
+  return gulp.src("source/**/*.{png,jpg}").pipe(gulp.dest("build/img"));
 };
 
 // WebP
@@ -128,7 +132,7 @@ const sprite = () => {
         inlineSvg: true,
       })
     )
-    .pipe(replace('<g fill="none">', "<g>"))
+    .pipe(replace(`<g fill="none">`, "<g>"))
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"));
 };
@@ -181,7 +185,15 @@ const watcher = () => {
 export const build = gulp.series(
   clean,
   copy,
-  gulp.parallel(htmlBuild, scriptsBuild, stylesBuild, svg, sprite, optimizeImages, createWebp),
+  gulp.parallel(
+    htmlBuild,
+    scriptsBuild,
+    stylesBuild,
+    svg,
+    sprite,
+    optimizeImages,
+    createWebp
+  ),
   gulp.series(server, watcher)
 );
 
