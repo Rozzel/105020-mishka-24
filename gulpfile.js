@@ -42,12 +42,6 @@ const stylesBuild = () => {
 const html = () => {
   return gulp
     .src("source/*.html")
-    .pipe(
-      replace(
-        "?v=cache",
-        `?v=${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
-      )
-    )
     .pipe(gulp.dest("build"));
 };
 
