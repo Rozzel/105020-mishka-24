@@ -40,9 +40,7 @@ const stylesBuild = () => {
 
 // HTML
 const html = () => {
-  return gulp
-    .src("source/*.html")
-    .pipe(gulp.dest("build"));
+  return gulp.src("source/*.html").pipe(gulp.dest("build"));
 };
 
 const htmlBuild = () => {
