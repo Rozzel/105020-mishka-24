@@ -22,7 +22,7 @@ export const styles = () => {
     .src("source/less/style.less", { sourcemaps: true })
     .pipe(plumber())
     .pipe(less())
-    .pipe(postcss([autoprefixer(), csso()]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css", { sourcemaps: "." }))
     .pipe(browser.stream());
@@ -40,6 +40,18 @@ const stylesBuild = () => {
 
 // HTML
 const html = () => {
+  return gulp
+    .src("source/*.html")
+    .pipe(
+      replace(
+        "?v=cache",
+        `?v=${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
+      )
+    )
+    .pipe(gulp.dest("build"));
+};
+
+const htmlBuild = () => {
   return gulp
     .src("source/*.html")
     .pipe(
@@ -155,7 +167,7 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
-  gulp.parallel(html, scripts, stylesBuild, svg, sprite, createWebp),
+  gulp.parallel(htmlBuild, scripts, stylesBuild, svg, sprite, createWebp),
   gulp.series(server, watcher)
 );
 
