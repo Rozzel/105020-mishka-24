@@ -20,25 +20,29 @@
 
 <body class="page__body">
 
-
   <picture>
     <!-- FIXME pixel-perfect -->
-    <img src="pixel-perfect/index-mobile.png" class="pixel-perfect" />
+    <source media="(min-width: 1150px)" src="img/pixel-perfect/index-desktop.png">
+    <source media="(min-width: 768px)" src="img/pixel-perfect/index-tablet.png">
+    <img src="img/pixel-perfect/index-m-mobile.png" class="pixel-perfect" />
+    <style>
+      .pixel-perfect {
+        opacity: 50%;
+        filter: invert(100%);
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: none;
+      }
+    </style>
     <script>
       if (document.location.hash === "#pp")
         document.querySelector(".pixel-perfect").style.display = "block";
     </script>
-    <style>
-      .pixel-perfect {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0.8;
-        filter: invert(100%);
-        display: none;
-      }
-    </style>
   </picture>
 
   <header class="page-header">

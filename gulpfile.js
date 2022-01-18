@@ -101,7 +101,7 @@ const optimizeImages = () => {
 };
 
 const copyImages = () => {
-  return gulp.src("source/**/*.{png,jpg}").pipe(gulp.dest("build/img"));
+  return gulp.src("source/img/**/*.{png,jpg}").pipe(gulp.dest("build/img"));
 };
 
 // WebP
