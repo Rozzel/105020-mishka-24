@@ -173,8 +173,7 @@ const watcher = () => {
 export const build = gulp.series(
   clean,
   copy,
-  optimizeImages,
-  gulp.parallel(htmlBuild, scriptsBuild, stylesBuild, svg, sprite, createWebp),
+  gulp.parallel(htmlBuild, scriptsBuild, stylesBuild, svg, sprite, optimizeImages, createWebp),
   gulp.series(server, watcher)
 );
 
@@ -182,7 +181,6 @@ export const build = gulp.series(
 export default gulp.series(
   clean,
   copy,
-  copyImages,
-  gulp.parallel(html, scripts, styles, svg, sprite, createWebp),
+  gulp.parallel(html, scripts, styles, svg, sprite, copyImages, createWebp),
   gulp.series(server, watcher)
 );
