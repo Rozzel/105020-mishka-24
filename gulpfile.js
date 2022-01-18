@@ -68,6 +68,13 @@ const htmlBuild = () => {
 const scripts = () => {
   return gulp
     .src("source/js/*.js")
+    .pipe(gulp.dest("build/js"))
+    .pipe(browser.stream());
+};
+
+const scriptsBuild = () => {
+  return gulp
+    .src("source/js/*.js")
     .pipe(terser())
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
@@ -167,7 +174,7 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
-  gulp.parallel(htmlBuild, scripts, stylesBuild, svg, sprite, createWebp),
+  gulp.parallel(htmlBuild, scriptsBuild, stylesBuild, svg, sprite, createWebp),
   gulp.series(server, watcher)
 );
 
