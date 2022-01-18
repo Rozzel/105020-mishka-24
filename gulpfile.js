@@ -68,6 +68,10 @@ const htmlBuild = () => {
 const scripts = () => {
   return gulp
     .src("source/js/*.js")
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+      path.extname = ".js";
+    }))
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
@@ -76,6 +80,10 @@ const scriptsBuild = () => {
   return gulp
     .src("source/js/*.js")
     .pipe(terser())
+        .pipe(rename(function (path) {
+      path.basename += ".min";
+      path.extname = ".js";
+    }))
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
