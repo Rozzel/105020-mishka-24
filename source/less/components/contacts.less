@@ -108,6 +108,11 @@
   justify-content: center;
   grid-area: button;
   width: 100%;
+  margin-bottom: 4px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+  }
 
   @media (min-width: @desktop-width) {
     justify-content: flex-start;
