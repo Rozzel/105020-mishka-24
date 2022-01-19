@@ -24,10 +24,10 @@
     <!-- FIXME pixel-perfect -->
     <source media="(min-width: 1150px)" src="img/pixel-perfect/desktop.png">
     <source media="(min-width: 768px)" src="img/pixel-perfect/tablet.png">
-    <!--    media="(min-width: 320px)" --><img src="img/pixel-perfect/mobile.png" class="pixel-perfect" />
+    <!--           (min-width: 320px) --><img src="img/pixel-perfect/mobile.png" class="pixel-perfect" />
     <style>
       .pixel-perfect {
-        opacity: 50%;
+        opacity: 0.7;
         filter: invert(100%);
         z-index: 2;
         position: absolute;
@@ -254,9 +254,7 @@
         </p>
       </div>
 
-      <div class="contacts__map map">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0f4c4f33b4a89121d9d7320a0bc2153017d7be00313bb0d21dba129b9ba5bac7&amp;width=100%25&amp;height=457&amp;lang=ru_RU&amp;scroll=false"></script>
-      </div>
+      <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f4c4f33b4a89121d9d7320a0bc2153017d7be00313bb0d21dba129b9ba5bac7&amp;source=constructor" width="100%" height="454" frameborder="0" loading="lazy"></iframe>
 
       <div class="contact__button">
         <div class="contact__button-wraper spacer">

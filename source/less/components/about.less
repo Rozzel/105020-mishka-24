@@ -6,7 +6,7 @@
 
 .about__wrapper {
   .size-width(max; @mobile-size; @mobile-padding);
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 30px;
 
   @media (min-width: @tablet-width) {
@@ -27,7 +27,7 @@
 
 .about__title {
   .font-text(700; 25px; 30px; @base-color);
-  margin-bottom: 28px;
+  margin-bottom: 1px;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
@@ -73,11 +73,12 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
   &:nth-child(1)::before {
     .item-icon(33px; 38px; 16px; "flower.svg");
+    margin-left: 7px;
   }
 
   &:nth-child(2)::before {
@@ -86,6 +87,7 @@
 
   &:nth-child(3)::before {
     .item-icon(34px; 27px; 21px; "heart.svg");
+    margin-left: 7px;
   }
 
   &:nth-child(4)::before {

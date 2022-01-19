@@ -14,8 +14,7 @@
   display: flex;
   flex-direction: column;
   .size-width(max; @mobile-size; @mobile-padding);
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
 
   @media (min-width: @tablet-width) {
     display: grid;
@@ -42,13 +41,11 @@
 .reviews__title {
   .font-text(700; 25px; 30px; @base-color);
   .indent();
-  margin-bottom: 14px;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
     .grid-cr(1; 1);
     margin-top: auto;
-    margin-bottom: 0;
   }
 
   @media (min-width: @desktop-width) {
