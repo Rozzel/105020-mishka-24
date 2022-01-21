@@ -34,36 +34,37 @@ function saveForms() {
 }
 
 function sliders() {
-  let btnNext = document.querySelector(".button-next");
-  let btnPrev = document.querySelector(".button-prev");
-  let slides = document.querySelectorAll(".reviews__item");
-  let i = 0;
+  let slider = document.querySelector(".slider");
+  if (slider) {
+    let btnNext = document.querySelector(".button-next");
+    let btnPrev = document.querySelector(".button-prev");
+    let slides = document.querySelectorAll(".reviews__item");
+    let i = 0;
 
-  btnNext.addEventListener("click", function () {
-    ++i;
-    if (i >= slides.length) {
-      slides[i - 1].classList.remove("reviews__item--on");
-      i = 0;
-      slides[i].classList.add("reviews__item--on");
-    } else {
-      slides[i - 1].classList.remove("reviews__item--on");
-      slides[i].classList.add("reviews__item--on");
-    }
-  });
+    btnNext.addEventListener("click", function () {
+      ++i;
+      if (i >= slides.length) {
+        slides[i - 1].classList.remove("reviews__item--on");
+        i = 0;
+        slides[i].classList.add("reviews__item--on");
+      } else {
+        slides[i - 1].classList.remove("reviews__item--on");
+        slides[i].classList.add("reviews__item--on");
+      }
+    });
 
-  btnPrev.addEventListener("click", function () {
-    --i;
-    if (i < 0) {
-      i = slides.length - 1;
-      slides[i - i].classList.remove("reviews__item--on");
-      slides[i].classList.add("reviews__item--on");
-    } else {
-      slides[i + 1].classList.remove("reviews__item--on");
-      slides[i].classList.add("reviews__item--on");
-    }
-  });
+    btnPrev.addEventListener("click", function () {
+      --i;
+      if (i < 0) {
+        i = slides.length - 1;
+        slides[i - i].classList.remove("reviews__item--on");
+        slides[i].classList.add("reviews__item--on");
+      } else {
+        slides[i + 1].classList.remove("reviews__item--on");
+        slides[i].classList.add("reviews__item--on");
+      }
+    });
+  }
 }
 
-menuToggle();
-sliders();
-window.onload = saveForms;
+window.onload = [saveForms(), menuToggle(), sliders()];
