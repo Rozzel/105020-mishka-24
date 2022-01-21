@@ -197,6 +197,12 @@
   }
 }
 
+.main-nav__item:nth-child(-n + 2) .main-nav__link {
+  @media (min-width: @desktop-width) {
+    .font-text(700; 17px; 24px; @base-color);
+  }
+}
+
 .main-nav__item--search a,
 .main-nav__item--cart a {
   @media (min-width: @tablet-width) {
@@ -215,8 +221,8 @@
 
   @media (min-width: @desktop-width) {
     margin-top: 0;
-    width: 716px;
-    grid-template-columns: repeat(3, 1fr);
+    width: 700px;
+    grid-template-columns: 185px 1fr 1fr;
     grid-template-rows: 88px;
     column-gap: 35px;
   }
