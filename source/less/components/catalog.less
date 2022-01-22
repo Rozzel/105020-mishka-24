@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 4px;
 
   @media (min-width: @tablet-width) {
-    padding-top: 67px;
+    padding-top: 73px;
     padding-bottom: 53px;
   }
 
@@ -35,6 +35,10 @@
   .indent(list);
   width: 100%;
 
+  @media (min-width: @tablet-width) {
+    gap: 53px;
+  }
+
   @media (min-width: @desktop-width) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -46,13 +50,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid @base-color--3;
+  outline: 1px solid @base-color--3;
 
   @media (min-width: @tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content min-content 1fr;
-    column-gap: 43px;
+    column-gap: 33px;
     grid-template-areas:
       "img name"
       "img spec"
@@ -114,7 +118,7 @@
 
   &--image {
     order: -2;
-    margin-bottom: 29px;
+    margin-bottom: 20px;
 
     @media (min-width: @tablet-width) {
       grid-area: img;
@@ -169,7 +173,7 @@
   margin: 0 28px;
   padding-bottom: 17px;
   border-bottom: 1px solid @base-color--3;
-  margin-bottom: 41px;
+  margin-bottom: 22px;
 
   @media (min-width: @tablet-width) {
     .font-text(400; 15px; 30px; @base-color--lighten);

@@ -2,8 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 58px;
-  border-top: 1px solid @base-color--3;
+  padding-bottom: 36px;
 
   @media (min-width: @tablet-width) {
     border-top: none;
@@ -13,8 +12,11 @@
 .produce__wrapper {
   display: flex;
   flex-direction: column;
+  .size-width(max; @mobile-size; @mobile-padding);
+  outline: 1px solid @base-color--3;
+  outline-offset: @mobile-padding * -1;
   padding-top: 21px;
-  .size-width(max; @mobile-size; 0);
+  padding-bottom: 20px;
 
   @media (min-width: @tablet-width) {
     .size-width(no-max; @tablet-size; @tablet-padding);
@@ -46,14 +48,14 @@
 .produce__heading {
   position: relative;
   .font-text(700; 17px; 24px; @base-color);
+  margin-top: 30px;
+  margin-left: 91px;
   margin-bottom: 27px;
-  margin-left: @mobile-padding + 91px;
-  margin-right: 34px;
 
   &::before {
     position: absolute;
-    top: 8px;
-    left: -55px;
+    top: 12px;
+    left: -57px;
     content: "";
     .size(32px; 22px);
     background: url("../img/icon/video.svg") no-repeat;
@@ -92,7 +94,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin: 0 25px;
   margin-bottom: 35px;
 
   @media (min-resolution: 2dppx) {
@@ -142,9 +143,8 @@
 .produce__description {
   .font-text(400; 13px; 24px; @base-color--lighten);
   margin-top: 0;
-  margin-left: @mobile-padding + 34px;
-  margin-right: @mobile-padding;
-  margin-bottom: 41px;
+  margin-left: 34px;
+  margin-bottom: 42px;
 
   @media (min-width: @tablet-width) {
     .font-text(400; 15px; 30px; @base-color--lighten);
@@ -161,9 +161,6 @@
 }
 
 .produce__order {
-  border-bottom: 1px solid @base-color--3;
-  margin: 0 @mobile-padding;
-
   @media (min-width: @desktop-width) {
     grid-area: button;
   }
