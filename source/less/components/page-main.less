@@ -12,21 +12,24 @@
 
   @media (min-width: @tablet-width) {
     .size-width(no-max; @tablet-size; @tablet-padding);
-    min-height: 165px;
+    min-height: 179px;
+    align-items: flex-start;
   }
 
   @media (min-width: @desktop-width) {
     .size-width(no-max; @desktop-size; @desktop-padding);
-    min-height: 255px;
+    min-height: 208px;
   }
 }
 
 .page-main__heading {
   .font-text(700; 27px; 30px; @base-color);
+  .indent();
   text-align: center;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 43px; 50px; @base-color);
+    padding-top: 58px;
   }
 
   @media (min-width: @desktop-width) {

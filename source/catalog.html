@@ -24,7 +24,7 @@
     <!-- FIXME pixel-perfect -->
     <source media="(min-width: 1150px)" srcset="img/pixel-perfect/catalog/desktop.png">
     <source media="(min-width: 768px)" srcset="img/pixel-perfect/catalog/tablet.png">
-    <img src="img/pixel-perfect/catalog/mobile=.png" class="pixel-perfect" />
+    <img src="img/pixel-perfect/catalog/mobile.png" class="pixel-perfect" />
     <style>
       .pixel-perfect {
         opacity: 0.7;
@@ -202,9 +202,7 @@
 
     <section class="produce">
       <div class="produce__wrapper">
-
         <h2 class="produce__heading">Процесс<br class="br br--mobile-desktop"> производства</h2>
-
         <div class="produce__video">
           <button class="produce__play-button" type="button" aria-label="Воспроизвести видео">
             <svg width="101" height="77" viewBox="0 0 101 77">
@@ -213,13 +211,16 @@
           </button>
         </div>
 
-        <p class="produce__description">
-          По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
-        </p>
+        <div class="produce__description-wrapper">
+          <p class="produce__description">
+            По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+          </p>
 
-        <div class="produce__order wrapper wrapper--center">
-          <a class="produce__order-button button" href="#">Сделать заказ</a>
+          <div class="produce__order wrapper wrapper--center">
+            <a class="produce__order-button button" href="#">Сделать заказ</a>
+          </div>
         </div>
+
 
       </div>
     </section>
