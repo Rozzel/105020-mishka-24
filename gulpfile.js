@@ -22,7 +22,7 @@ export const styles = () => {
     .src("source/less/style.less", { sourcemaps: true })
     .pipe(plumber())
     .pipe(less())
-    .pipe(postcss([autoprefixer(), csso()]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css", { sourcemaps: "." }))
     .pipe(browser.stream());
@@ -40,6 +40,10 @@ const stylesBuild = () => {
 
 // HTML
 const html = () => {
+  return gulp.src("source/*.html").pipe(gulp.dest("build"));
+};
+
+const htmlBuild = () => {
   return gulp
     .src("source/*.html")
     .pipe(
@@ -56,7 +60,26 @@ const html = () => {
 const scripts = () => {
   return gulp
     .src("source/js/*.js")
+    .pipe(
+      rename(function (path) {
+        path.basename += ".min";
+        path.extname = ".js";
+      })
+    )
+    .pipe(gulp.dest("build/js"))
+    .pipe(browser.stream());
+};
+
+const scriptsBuild = () => {
+  return gulp
+    .src("source/js/*.js")
     .pipe(terser())
+    .pipe(
+      rename(function (path) {
+        path.basename += ".min";
+        path.extname = ".js";
+      })
+    )
     .pipe(gulp.dest("build/js"))
     .pipe(browser.stream());
 };
@@ -101,7 +124,7 @@ const sprite = () => {
         inlineSvg: true,
       })
     )
-    .pipe(replace('<g fill="none">', "<g>"))
+    .pipe(replace(`<g fill="none">`, "<g>"))
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"));
 };
@@ -154,8 +177,15 @@ const watcher = () => {
 export const build = gulp.series(
   clean,
   copy,
-  optimizeImages,
-  gulp.parallel(html, scripts, stylesBuild, svg, sprite, createWebp),
+  gulp.parallel(
+    htmlBuild,
+    scriptsBuild,
+    stylesBuild,
+    svg,
+    sprite,
+    optimizeImages,
+    createWebp
+  ),
   gulp.series(server, watcher)
 );
 
@@ -163,7 +193,6 @@ export const build = gulp.series(
 export default gulp.series(
   clean,
   copy,
-  copyImages,
-  gulp.parallel(html, scripts, styles, svg, sprite, createWebp),
+  gulp.parallel(html, scripts, styles, svg, sprite, copyImages, createWebp),
   gulp.series(server, watcher)
 );

@@ -70,34 +70,6 @@
   margin: 0 @margin;
 }
 
-.main-nav__toggle(hamburger) {
-  content: "";
-  position: absolute;
-  top: 15px;
-  left: 17px;
-  .size(20px; 2px);
-  background-color: @base-color--2;
-}
-
-.main-nav__toggle(closed) {
-  .main-nav__toggle(hamburger);
-  box-shadow: 0 8px 0 0 @base-color--2, 0 16px 0 0 @base-color--2;
-}
-
-.main-nav__toggle(opened) {
-  .main-nav__toggle(hamburger);
-  top: 25px;
-  box-shadow: none;
-}
-
-.main-nav__toggle(openedBefore) {
-  transform: rotate(45deg);
-}
-
-.main-nav__toggle(openedAfter) {
-  transform: rotate(-45deg);
-}
-
 .item-icon(@width: 34px; @height: 34px; @margin: 16px; @name: "circle.svg") {
   content: "";
   display: inline-block;

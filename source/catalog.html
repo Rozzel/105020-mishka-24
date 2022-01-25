@@ -12,10 +12,38 @@
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#56c3b2">
 
+  <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
   <link rel="stylesheet" href="css/style.min.css?v=cache">
 </head>
 
 <body class="page__body">
+
+  <picture>
+    <!-- FIXME pixel-perfect -->
+    <source media="(min-width: 1150px)" srcset="img/pixel-perfect/catalog/desktop.png">
+    <source media="(min-width: 768px)" srcset="img/pixel-perfect/catalog/tablet.png">
+    <img src="img/pixel-perfect/catalog/mobile.png" class="pixel-perfect" />
+    <style>
+      .pixel-perfect {
+        opacity: 0.7;
+        filter: invert(100%);
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: none;
+      }
+    </style>
+    <script>
+      if (document.location.hash === "#pp")
+        document.querySelector(".pixel-perfect").style.display = "block";
+    </script>
+  </picture>
 
   <header class="page-header page-header--inner">
     <div class="page-header__wrapper">
@@ -93,7 +121,7 @@
 
                 <source media="(min-width: 1150px)" srcset="img/catalog/bunny-desktop.jpg 1x, img/catalog/bunny-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/catalog/bunny-tablet.jpg 1x, img/catalog/bunny-tablet@2x.jpg 2x">
-                <img class="catalog__image" src="img/catalog/bunny-mobile.jpg" srcset="img/catalog/bunny-mobile@2x.jpg 2x" alt="Зайчик-попрыгайчик" width="260" height="195">
+                <img class="catalog__image" src="img/catalog/bunny-mobile.jpg" srcset="img/catalog/bunny-mobile@2x.jpg 2x" loading="lazy" alt="Зайчик-попрыгайчик" width="260" height="195">
               </picture>
             </a>
 
@@ -122,7 +150,7 @@
 
                 <source media="(min-width: 1150px)" srcset="img/catalog/laundry-basket-desktop.jpg 1x, img/catalog/laundry-basket-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/catalog/laundry-basket-tablet.jpg 1x, img/catalog/laundry-basket-tablet@2x.jpg 2x">
-                <img class="catalog__image" src="img/catalog/laundry-basket-mobile.jpg" srcset="img/catalog/laundry-basket-mobile@2x.jpg 2x" alt="Корзинка для белья" width="260" height="195">
+                <img class="catalog__image" src="img/catalog/laundry-basket-mobile.jpg" srcset="img/catalog/laundry-basket-mobile@2x.jpg 2x" loading="lazy" alt="Корзинка для белья" width="260" height="195">
               </picture>
             </a>
 
@@ -151,7 +179,7 @@
 
                 <source media="(min-width: 1150px)" srcset="img/catalog/toy-basket-desktop.jpg 1x, img/catalog/toy-basket-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/catalog/toy-basket-tablet.jpg 1x, img/catalog/toy-basket-tablet@2x.jpg 2x">
-                <img class="catalog__image" src="img/catalog/toy-basket-mobile.jpg" srcset="img/catalog/toy-basket-mobile@2x.jpg 2x" alt="Большая корзинка для игрушек" width="260" height="195">
+                <img class="catalog__image" src="img/catalog/toy-basket-mobile.jpg" srcset="img/catalog/toy-basket-mobile@2x.jpg 2x" loading="lazy" alt="Большая корзинка для игрушек" width="260" height="195">
               </picture>
             </a>
 
@@ -174,9 +202,7 @@
 
     <section class="produce">
       <div class="produce__wrapper">
-
         <h2 class="produce__heading">Процесс<br class="br br--mobile-desktop"> производства</h2>
-
         <div class="produce__video">
           <button class="produce__play-button" type="button" aria-label="Воспроизвести видео">
             <svg width="101" height="77" viewBox="0 0 101 77">
@@ -185,13 +211,16 @@
           </button>
         </div>
 
-        <p class="produce__description">
-          По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
-        </p>
+        <div class="produce__description-wrapper">
+          <p class="produce__description">
+            По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+          </p>
 
-        <div class="produce__order wrapper wrapper--center">
-          <a class="produce__order-button button" href="#">Сделать заказ</a>
+          <div class="produce__order wrapper wrapper--center">
+            <a class="produce__order-button button" href="#">Сделать заказ</a>
+          </div>
         </div>
+
 
       </div>
     </section>
@@ -284,7 +313,7 @@
     </div>
   </div>
 
-  <script src="js/script.js?v=cache"></script>
+  <script src="js/script.min.js?v=cache"></script>
 
 </body>
 

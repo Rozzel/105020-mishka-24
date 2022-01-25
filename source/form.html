@@ -12,10 +12,38 @@
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#56c3b2">
 
+  <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
   <link rel="stylesheet" href="css/style.min.css?v=cache">
 </head>
 
 <body class="page__body">
+
+  <picture>
+    <!-- FIXME pixel-perfect -->
+    <source media="(min-width: 1150px)" srcset="img/pixel-perfect/form/desktop.png">
+    <source media="(min-width: 768px)" srcset="img/pixel-perfect/form/tablet.png">
+    <img src="img/pixel-perfect/form/mobile.png" class="pixel-perfect" />
+    <style>
+      .pixel-perfect {
+        opacity: 0.7;
+        filter: invert(100%);
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: none;
+      }
+    </style>
+    <script>
+      if (document.location.hash === "#pp")
+        document.querySelector(".pixel-perfect").style.display = "block";
+    </script>
+  </picture>
 
   <header class="page-header page-header--inner">
     <div class="page-header__wrapper">
@@ -86,7 +114,7 @@
           </p>
         </div>
         <form class="knitting__form" action="https://echo.htmlacademy.ru/" method="POST">
-          <fieldset class="knitting__group knitting__group--radio">
+          <fieldset class="knitting__group knitting__group--radio knitting__indent">
 
             <legend class="knitting__group-name">Тип</legend>
 
@@ -101,7 +129,7 @@
           </fieldset>
 
           <div class="knitting__group-wrapper-dark">
-            <fieldset class="knitting__group">
+            <fieldset class="knitting__group knitting__group--product-color">
               <legend class="knitting__group-name">Цвет</legend>
 
               <div class="knitting__label-wrapper knitting__label-wrapper--checkbox">
@@ -126,10 +154,10 @@
             </fieldset>
           </div>
 
-          <fieldset class="knitting__group knitting__group--text">
+          <fieldset class="knitting__group knitting__group--full-name knitting__group--text">
 
-            <legend class="knitting__group-name">ФИО</legend>
-            <div class="knitting__label-wrapper knitting__label-wrapper--text">
+            <legend class="knitting__group-name knitting__group-name--full-name">ФИО</legend>
+            <div class="knitting__label-wrapper knitting__label-wrapper--full-name knitting__label-wrapper--text">
 
               <div class="knitting__input-wrapper">
                 <label class="knitting__label" for="knitting-name">Имя:</label>
@@ -149,7 +177,7 @@
 
           </fieldset>
 
-          <div class="knitting__group-wrapper-dark">
+          <div class="knitting__group-wrapper-dark knitting__group-wrapper-dark--contact">
             <fieldset class="knitting__group knitting__group--solo knitting__group--solo-bottom">
 
               <legend class="knitting__group-name">Тел</legend>
@@ -161,7 +189,7 @@
             </fieldset>
           </div>
 
-          <div class="knitting__group-wrapper-dark">
+          <div class="knitting__group-wrapper-dark knitting__group-wrapper-dark--contact">
             <fieldset class="knitting__group knitting__group--solo knitting__group--solo-top">
 
               <legend class="knitting__group-name">E-mail</legend>
@@ -249,7 +277,7 @@
     </div>
   </footer>
 
-  <script src="js/script.js?v=cache"></script>
+  <script src="js/script.min.js?v=cache"></script>
 
 </body>
 

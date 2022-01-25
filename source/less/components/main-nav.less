@@ -17,22 +17,34 @@
 
 .main-nav--closed .main-nav__toggle {
   &::before {
-    .main-nav__toggle(closed);
+    content: "";
+    position: absolute;
+    background-color: @base-color--2;
+    .size(20px; 2px);
+    top: 15px;
+    left: 17px;
+    box-shadow: 0 6px 0 0 @base-color--2, 0 12px 0 0 @base-color--2;
   }
 }
 
 .main-nav--opened .main-nav__toggle {
   &::before,
   &::after {
-    .main-nav__toggle(opened);
+    content: "";
+    position: absolute;
+    background-color: @base-color--2;
+    .size(26px; 2px);
+    top: 21px;
+    left: 14px;
+    box-shadow: none;
   }
 
   &::before {
-    .main-nav__toggle(openedBefore);
+    transform: rotate(45deg);
   }
 
   &::after {
-    .main-nav__toggle(openedAfter);
+    transform: rotate(-45deg);
   }
 }
 
@@ -71,7 +83,7 @@
 
   @media (min-width: @tablet-width) {
     display: grid;
-    grid-template-columns: 1fr 330px;
+    grid-template-columns: 1fr 350px;
     align-items: flex-start;
   }
 }
@@ -79,8 +91,8 @@
 .main-nav__toggle {
   display: block;
   position: absolute;
-  top: -72px;
-  right: 30px;
+  top: -68px;
+  right: 18px;
   z-index: 2;
   .size(50px; 50px);
   background-color: @base-color--invert;
@@ -101,8 +113,13 @@
   display: block;
   .font-text(700; 17px; 24px; @base-color);
   text-decoration: none;
-  padding: 28px 0;
+  padding: 27px 0;
+  padding-left: 12px;
   width: 185px;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 0;
+  }
 
   &:hover {
     opacity: 0.6;
@@ -124,7 +141,7 @@
   left: -36px;
 
   @media (min-width: @tablet-width) {
-    left: 0;
+    left: -16px;
   }
 }
 
@@ -167,12 +184,6 @@
   }
 }
 
-.main-nav__item--search svg {
-  @media (min-width: @tablet-width) {
-    position: static;
-  }
-}
-
 .main-nav__item--search span {
   @media (min-width: @tablet-width) {
     display: none;
@@ -186,10 +197,17 @@
   }
 }
 
+.main-nav__item:nth-child(-n + 2) .main-nav__link {
+  @media (min-width: @desktop-width) {
+    .font-text(700; 17px; 24px; @base-color);
+  }
+}
+
 .main-nav__item--search a,
 .main-nav__item--cart a {
   @media (min-width: @tablet-width) {
     .flex(center; center);
+    margin-left: 12px;
   }
 }
 
@@ -198,13 +216,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 88px;
-    column-gap: 5px;
+    column-gap: 16px;
   }
 
   @media (min-width: @desktop-width) {
     margin-top: 0;
-    width: 716px;
-    grid-template-columns: repeat(3, 1fr);
+    width: 700px;
+    grid-template-columns: 185px 1fr 1fr;
     grid-template-rows: 88px;
     column-gap: 35px;
   }

@@ -11,6 +11,5 @@ npm-debug.*
 source/css/*.css
 source/css/*.map
 Thumbs.db
-/**/pixel-perfect/
-/**/pixel-perfect.less
+# /**/pixel-perfect/
 build/

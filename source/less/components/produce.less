@@ -2,19 +2,23 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 58px;
-  border-top: 1px solid @base-color--3;
+  padding-bottom: 36px;
 
   @media (min-width: @tablet-width) {
-    border-top: none;
+    padding-bottom: 72px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 110px;
   }
 }
 
 .produce__wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: 21px;
-  .size-width(max; @mobile-size; 0);
+  .size-width(260px; @mobile-padding);
+  padding-top: 30px;
+  padding-bottom: 20px;
 
   @media (min-width: @tablet-width) {
     .size-width(no-max; @tablet-size; @tablet-padding);
@@ -28,10 +32,11 @@
     grid-template-rows: auto auto 1fr;
     column-gap: 80px;
     outline: 1px solid @base-color--3;
+    outline-offset: -1px;
+    min-height: 455px;
     grid-template-areas:
       "video heading"
-      "video description"
-      "video button";
+      "video description";
 
     &:hover {
       .item-bg(hover);
@@ -46,39 +51,46 @@
 .produce__heading {
   position: relative;
   .font-text(700; 17px; 24px; @base-color);
-  margin-bottom: 27px;
-  margin-left: @mobile-padding + 91px;
-  margin-right: 34px;
+  .indent();
+  border-top: 1px solid @base-color--3;
+  border-left: 1px solid @base-color--3;
+  border-right: 1px solid @base-color--3;
+  padding-top: 21px;
+  padding-left: 91px;
+  padding-bottom: 27px;
 
   &::before {
     position: absolute;
-    top: 8px;
-    left: -55px;
+    top: 34px;
+    left: 34px;
     content: "";
     .size(32px; 22px);
     background: url("../img/icon/video.svg") no-repeat;
 
     @media (min-width: @tablet-width) {
-      top: -2px;
-      left: -65px;
+      top: 39px;
+      left: 41px;
     }
 
     @media (min-width: @desktop-width) {
-      top: -47px;
+      top: 44px;
       left: 0;
     }
   }
 
   @media (min-width: @tablet-width) {
     .font-text(700; 20px; 24px; @base-color);
-    margin-left: @tablet-padding + 92px;
     grid-area: heading;
+    padding-top: 40px;
+    padding-left: 106px;
+    padding-bottom: 26px;
   }
 
   @media (min-width: @desktop-width) {
-    margin: 0;
-    margin-top: 96px;
-    margin-right: 57px;
+    border: none;
+    padding-top: 93px;
+    padding-left: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -92,15 +104,13 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin: 0 25px;
-  margin-bottom: 35px;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/background/video-mobile@2x.jpg");
   }
 
   @media (min-width: @tablet-width) {
-    .size(668px; 445px);
+    .size(668px; 455px);
     order: -1;
     grid-area: video;
     background-image: url("../img/background/video-tablet.jpg");
@@ -111,7 +121,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    .size(682px; 445px);
+    .size(682px; 455px);
     margin: 0;
     background-image: url("../img/background/video-desktop.jpg");
 
@@ -141,36 +151,40 @@
 
 .produce__description {
   .font-text(400; 13px; 24px; @base-color--lighten);
-  margin-top: 0;
-  margin-left: @mobile-padding + 34px;
-  margin-right: @mobile-padding;
-  margin-bottom: 41px;
+  margin-top: 34px;
+  margin-left: 34px;
+  margin-bottom: 42px;
 
   @media (min-width: @tablet-width) {
     .font-text(400; 15px; 30px; @base-color--lighten);
-    margin-left: @tablet-padding + 28px;
+    margin-top: 0;
+    margin-left: 39px;
     margin-right: @tablet-padding;
-    grid-area: description;
   }
 
   @media (min-width: @desktop-width) {
     margin: 0;
     margin-top: 27px;
     margin-right: 57px;
+    margin-bottom: 54px;
+  }
+}
+
+.produce__description-wrapper {
+  border-left: 1px solid @base-color--3;
+  border-right: 1px solid @base-color--3;
+  border-bottom: 1px solid @base-color--3;
+
+  @media (min-width: @desktop-width) {
+    border: none;
   }
 }
 
 .produce__order {
-  border-bottom: 1px solid @base-color--3;
-  margin: 0 @mobile-padding;
-
-  @media (min-width: @desktop-width) {
-    grid-area: button;
-  }
-
   @media (min-width: @desktop-width) {
     margin: 0;
     border-bottom: none;
+    margin-bottom: 65px;
   }
 }
 
@@ -178,12 +192,12 @@
   .font-text(700; 18px; 16px; @base-color--lighten);
   text-align: center;
   padding: 14px 0;
-  margin: 0 34px;
+  margin: 0 33px;
   margin-bottom: 33px;
 
   @media (min-width: @tablet-width) {
     .font-text(700; 17px; 16px; @base-color--lighten);
-    margin-left: 42px;
+    margin: 0 40px;
     margin-bottom: 46px;
   }
 
@@ -191,6 +205,5 @@
     margin: 0;
     margin-top: auto;
     margin-right: 57px;
-    margin-bottom: 60px;
   }
 }
