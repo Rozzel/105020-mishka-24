@@ -15,6 +15,10 @@
     .size-width(no-max; 100%; 0);
     padding-top: 31px;
   }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 70px;
+  }
 }
 
 .knitting__form {
@@ -58,7 +62,7 @@
   &--radio {
     margin-bottom: 39px;
   }
-  //TODO
+
   &--full-name {
     margin-bottom: 36px;
   }
@@ -71,11 +75,12 @@
     padding-bottom: 50px;
 
     &--solo-bottom {
+      padding-top: 40px;
       padding-bottom: 12px;
     }
 
     &--solo-top {
-      padding-top: 12px;
+      padding-top: 3px;
     }
 
     &--radio {
@@ -86,19 +91,39 @@
       padding-top: 64px;
       padding-bottom: 72px;
     }
+
+    &--full-name {
+      padding-top: 0;
+    }
   }
 
   @media (min-width: @desktop-width) {
     .size-width(@desktop-size; @desktop-padding);
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 64px;
 
     &--solo-bottom {
-      padding-bottom: 24px;
+      padding-top: 42px;
+      padding-bottom: 14px;
     }
 
     &--solo-top {
       padding-top: 0;
+      padding-bottom: 48px;
+    }
+
+    &--product-color {
+      padding-top: 66px;
+      padding-bottom: 70px;
+    }
+
+    &--full-name {
+      padding-top: 0;
+      padding-bottom: 48px;
+    }
+
+    &--textarea {
+      padding-bottom: 50px;
     }
   }
 }
@@ -109,6 +134,10 @@
 
 .knitting__group--solo .knitting__group-name {
   margin-bottom: 0;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 24px;
+  }
 }
 
 .knitting__group--textarea .knitting__group-name {
@@ -127,7 +156,7 @@
   gap: 24px;
 
   &--full-name {
-    gap: 20px; //TODO
+    gap: 20px;
   }
 
   &--checkbox {
@@ -154,7 +183,8 @@
     padding-left: 175px;
 
     &--checkbox {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 216px);
+      column-gap: 48px;
     }
   }
 }
@@ -169,7 +199,7 @@
     column-gap: 25px;
 
     &:not(:last-of-type) {
-      margin-bottom: 24px;
+      margin-bottom: 14px;
     }
   }
 
@@ -227,6 +257,10 @@
   @media (min-width: @tablet-width) {
     position: absolute;
     width: 100px;
+
+    &--full-name {
+      margin-top: 25px;
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -260,7 +294,6 @@
   }
 }
 
-//TODO перенести в отдельный коспонент
 
 .knitting__input {
   width: 100%;
@@ -311,7 +344,7 @@
 .knitting__input[type="radio"]:checked + .knitting__label::after {
   position: absolute;
   content: "";
-  top: 5px;
+  top: 3px;
   left: -49px;
   .size(16px; 16px);
   border-radius: 50%;
@@ -332,11 +365,14 @@
   content: "";
   border: 2px solid @base-color--lighten;
 
-
   @media (min-width: @tablet-width) {
     top: -14px;
     left: -78px;
     .size(46px; 46px);
+  }
+
+  @media (min-width: @tablet-width) {
+    top: -16px;
   }
 }
 
@@ -369,7 +405,7 @@
   font-family: @font-name, @specify-families;
   .font-text(400; 17px; 17px; @base-color--lighten);
   border: none;
-  padding: 17px 10px 11px 2px; //TODO
+  padding: 17px 10px 11px 2px;
   border-bottom: 2px solid @base-color;
 
   &::placeholder {
@@ -393,24 +429,48 @@
 }
 
 .knitting__input[type="tel"] {
-  padding-right: 35px;
-  background: url("../img/icon/form/phone.svg") no-repeat bottom 17px right 5px;
+  padding-right: 45px;
+  background-image: url("../img/icon/form/phone.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 17px right 6px;
 
   &:hover,
   &:active {
-    background: url("../img/icon/form/phone-hover.svg") no-repeat bottom 17px
-      right 5px;
+    background-image: url("../img/icon/form/phone-hover.svg");
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-right: 70px;
+    background-position: bottom 17px right 26px;
+    background-color: @base-color--1;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-right: 50px;
+    background-position: bottom 17px right 8px;
   }
 }
 
 .knitting__input[type="email"] {
   padding-right: 45px;
-  background: url("../img/icon/form/mail.svg") no-repeat bottom 17px right 5px;
+  background-image: url("../img/icon/form/mail.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 12px right 4px;
 
   &:hover,
   &:active {
-    background: url("../img/icon/form/mail-hover.svg") no-repeat bottom 17px
-      right 5px;
+    background-image: url("../img/icon/form/mail-hover.svg");
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-right: 70px;
+    background-position: bottom 14px right 22px;
+    background-color: @base-color--1;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-right: 50px;
+    background-position: bottom 15px right 4px;
   }
 }
 
@@ -440,7 +500,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    max-width: 700px - 17px * 2;
+    max-width: 662px;
   }
 }
 
@@ -453,7 +513,7 @@
   width: 100%;
 
   @media (min-width: @desktop-width) {
-    padding-bottom: 50px;
+    padding-bottom: 56px;
   }
 }
 
@@ -468,7 +528,7 @@
     .size-width(@tablet-size; @tablet-padding);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 50px;
+    padding-bottom: 58px;
   }
 
   @media (min-width: @desktop-width) {
@@ -501,6 +561,6 @@
   @media (min-width: @tablet-width) {
     width: fit-content;
     order: -1;
-    padding: 18px 34px;
+    padding: 16px 30px;
   }
 }
