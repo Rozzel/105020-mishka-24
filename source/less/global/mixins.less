@@ -60,13 +60,15 @@
   grid-row: @r;
 }
 
-.divider(@height; @width; @bottom; @name; @margin: 0) {
+.divider(@height; @width; @bottom; @name; @margin: 0; @position: bottom center) {
   position: absolute;
   content: "";
   width: @width;
   height: @height;
   bottom: @bottom;
-  background: url("../img/divider/@{name}") repeat-x bottom center;
+  background-image: url("../img/divider/@{name}");
+  background-repeat: repeat-x;
+  background-position: @position;
   margin: 0 @margin;
 }
 
@@ -75,7 +77,8 @@
   display: inline-block;
   width: @width;
   height: @height;
-  background: url("../img/icon/about/@{name}") no-repeat;
+  background-image: url("../img/icon/about/@{name}");
+  background-repeat: no-repeat;
   margin-bottom: @margin;
 }
 

@@ -20,31 +20,6 @@
 
 <body class="page__body">
 
-  <picture>
-    <!-- FIXME pixel-perfect -->
-    <source media="(min-width: 1150px)" srcset="img/pixel-perfect/catalog/desktop.png">
-    <source media="(min-width: 768px)" srcset="img/pixel-perfect/catalog/tablet.png">
-    <img src="img/pixel-perfect/catalog/mobile.png" class="pixel-perfect" />
-    <style>
-      .pixel-perfect {
-        opacity: 0.7;
-        filter: invert(100%);
-        z-index: 2;
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        display: none;
-      }
-    </style>
-    <script>
-      if (document.location.hash === "#pp")
-        document.querySelector(".pixel-perfect").style.display = "block";
-    </script>
-  </picture>
-
   <header class="page-header page-header--inner">
     <div class="page-header__wrapper">
 

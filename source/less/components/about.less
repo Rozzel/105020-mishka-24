@@ -6,7 +6,7 @@
 
 .about__wrapper {
   .size-width(max; @mobile-size; @mobile-padding);
-  padding-top: 27px;
+  padding-top: 33px;
   padding-bottom: 26px;
 
   @media (min-width: @tablet-width) {
@@ -81,10 +81,14 @@
   &:nth-child(1)::before {
     .item-icon(33px; 38px; 16px; "flower.svg");
     margin-left: 7px;
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 18px;
+    }
   }
 
   &:nth-child(2)::before {
-    .item-icon(47px; 27px; 26px; "money.svg");
+    .item-icon(47px; 27px; 23px; "money.svg");
   }
 
   &:nth-child(3)::before {
@@ -93,7 +97,11 @@
   }
 
   &:nth-child(4)::before {
-    .item-icon(35px; 34px; 20px; "clew.svg");
+    .item-icon(35px; 34px; 17px; "clew.svg");
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 23px;
+    }
   }
 
   &:nth-child(5)::before {
@@ -101,7 +109,8 @@
   }
 
   &:nth-child(6)::before {
-    .item-icon(33px; 32px; 20px; "present.svg");
+    top: 2px;
+    .item-icon(33px; 32px; 21px; "present.svg");
   }
 
   @media (min-width: @tablet-width) {
