@@ -1,7 +1,6 @@
 function menuToggle() {
   let navMain = document.querySelector(".main-nav");
   let navToggle = document.querySelector(".main-nav__toggle");
-
   navMain.classList.remove("main-nav--nojs");
   navToggle.addEventListener("click", function () {
     if (navMain.classList.contains("main-nav--closed")) {
@@ -17,8 +16,7 @@ function menuToggle() {
 function saveForms() {
   if (window.localStorage) {
     let elements = document.querySelectorAll("[name]");
-
-    for (var i = 0, length = elements.length; i < length; i++) {
+    for (let i = 0, length = elements.length; i < length; i++) {
       (function (element) {
         let name = element.getAttribute("name");
         element.value = localStorage.getItem(name) || "";
@@ -32,13 +30,11 @@ function saveForms() {
 
 function sliders() {
   let slider = document.querySelector(".slider");
-  
   if (slider) {
     let btnNext = document.querySelector(".button-next");
     let btnPrev = document.querySelector(".button-prev");
     let slides = document.querySelectorAll(".reviews__item");
     let i = 0;
-
     btnNext.addEventListener("click", function () {
       ++i;
       if (i >= slides.length) {
