@@ -5,16 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Заказать вязание на заказ в интернет-магазине ручных изделий для дома: Мишка</title>
-
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#56c3b2">
-
   <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
   <link rel="stylesheet" href="css/style.min.css?v=cache">
 </head>
 
@@ -22,7 +19,6 @@
 
   <header class="page-header page-header--inner">
     <div class="page-header__wrapper">
-
       <a class="page-header__logo-link" href="index.html">
         <picture>
           <source media="(min-width: 1150px)" srcset="img/logo/mishka-logo-desktop.svg">
@@ -30,20 +26,15 @@
           <img class="page-header__logo" width="86" height="35" src="img/logo/mishka-logo-mobile.svg" alt="Логотип интернет-магазин: Мишка">
         </picture>
       </a>
-
       <nav class="page-header__nav main-nav main-nav--closed main-nav--nojs">
-
         <button class="main-nav__toggle" aria-label="Открыть меню"></button>
-
         <div class="main-nav__wrapper">
-
           <ul class="main-nav__list">
             <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Каталог товаров</a></li>
             <li class="main-nav__item"><a class="main-nav__link">Вязание на заказ</a></li>
             <li class="main-nav__item main-nav__item--desktop"><a class="main-nav__link" href="#">Новые поступления</a></li>
             <li class="main-nav__item main-nav__item--desktop"><a class="main-nav__link" href="#">Распродажа</a></li>
           </ul>
-
           <ul class="main-nav__list-user">
             <li class="main-nav__item main-nav__item--search">
               <a class="main-nav__link" href="#">
@@ -63,11 +54,8 @@
             </li>
             <li class="main-nav__item main-nav__item--tablet"><a class="main-nav__link" href="#">Бесплатная доставка по России</a></li>
           </ul>
-
         </div>
-
       </nav>
-
     </div>
   </header>
 
@@ -81,7 +69,6 @@
 
     <section class="knitting">
       <h2 class="visually-hidden">Заполните форму заказа</h2>
-
       <div class="knitting__wrapper">
         <div class="knitting__wrapper-greeting-text">
           <p class="knitting__greeting-text">
@@ -90,71 +77,52 @@
         </div>
         <form class="knitting__form" action="https://echo.htmlacademy.ru/" method="POST">
           <fieldset class="knitting__group knitting__group--radio knitting__indent">
-
             <legend class="knitting__group-name">Тип</legend>
-
             <div class="knitting__label-wrapper">
               <input class="knitting__input" type="radio" id="knitting-accessory" name="knitting-type" value="Аксессуар для интерьера" checked>
               <label class="knitting__label" for="knitting-accessory">Аксессуар для<br class="br br--mobile"> интерьера</label>
-
               <input class="knitting__input" type="radio" id="knitting-toy" name="knitting-type" value="Детская игрушка">
               <label class="knitting__label" for="knitting-toy">Детская игрушка</label>
             </div>
-
           </fieldset>
-
           <div class="knitting__group-wrapper-dark">
             <fieldset class="knitting__group knitting__group--product-color">
               <legend class="knitting__group-name">Цвет</legend>
-
               <div class="knitting__label-wrapper knitting__label-wrapper--checkbox">
                 <input class="knitting__input" type="checkbox" id="knitting-color-white" name="knitting-color-white" value="Белый" checked>
                 <label class="knitting__label" for="knitting-color-white">Белый</label>
-
                 <input class="knitting__input" type="checkbox" id="knitting-color-gray" name="knitting-color-gray" value="Серый" checked>
                 <label class="knitting__label" for="knitting-color-gray">Серый</label>
-
                 <input class="knitting__input" type="checkbox" id="knitting-color-tiffany" name="knitting-color-tiffany" value="Тиффани">
                 <label class="knitting__label" for="knitting-color-tiffany">Тиффани</label>
-
                 <input class="knitting__input" type="checkbox" id="knitting-color-black" name="knitting-color-black" value="Черный">
                 <label class="knitting__label" for="knitting-color-black">Черный</label>
-
                 <input class="knitting__input" type="checkbox" id="knitting-color-pink" name="knitting-color-pink" value="Розовый">
                 <label class="knitting__label" for="knitting-color-pink">Розовый</label>
-
                 <input class="knitting__input" type="checkbox" id="knitting-color-orange" name="knitting-color-orange" value="Оранжевый">
                 <label class="knitting__label" for="knitting-color-orange">Оранжевый</label>
               </div>
             </fieldset>
           </div>
-
           <fieldset class="knitting__group knitting__group--full-name knitting__group--text">
-
             <legend class="knitting__group-name knitting__group-name--full-name">ФИО</legend>
             <div class="knitting__label-wrapper knitting__label-wrapper--full-name knitting__label-wrapper--text">
-
               <div class="knitting__input-wrapper">
                 <label class="knitting__label" for="knitting-name">Имя:</label>
                 <input class="knitting__input" type="text" id="knitting-name" name="knitting-name" placeholder="Введите ваше имя*" required>
               </div>
-
               <div class="knitting__input-wrapper">
                 <label class="knitting__label" for="knitting-surname">Фамилия:</label>
                 <input class="knitting__input" type="text" id="knitting-surname" name="knitting-surname" placeholder="Укажите фамилию*" required>
               </div>
-
               <div class="knitting__input-wrapper">
                 <label class="knitting__label" for="knitting-middlename">Отчество:</label>
                 <input class="knitting__input" type="text" id="knitting-middlename" name="knitting-middlename" placeholder="Отчество, если желаете">
               </div>
             </div>
-
           </fieldset>
-
           <div class="knitting__group-wrapper-dark knitting__group-wrapper-dark--contact">
             <fieldset class="knitting__group knitting__group--solo knitting__group--solo-bottom">
-
               <legend class="knitting__group-name">Тел</legend>
               <div class="knitting__label-wrapper">
                 <div class="knitting__input-wrapper">
@@ -163,10 +131,8 @@
               </div>
             </fieldset>
           </div>
-
           <div class="knitting__group-wrapper-dark knitting__group-wrapper-dark--contact">
             <fieldset class="knitting__group knitting__group--solo knitting__group--solo-top">
-
               <legend class="knitting__group-name">E-mail</legend>
               <div class="knitting__label-wrapper">
                 <div class="knitting__input-wrapper">
@@ -175,24 +141,19 @@
               </div>
             </fieldset>
           </div>
-
           <fieldset class="knitting__group knitting__group--textarea">
-
             <legend class="knitting__group-name">Доп</legend>
             <div class="knitting__label-wrapper">
               <textarea class="knitting__textarea" name="knitting-textarea" placeholder="Опишите все ваши пожелания к заказу" aria-label="Пожелания к заказу"></textarea>
             </div>
           </fieldset>
-
           <div class="knitting__send">
             <div class="knitting__send-wrapper">
               <small class="knitting__required-fields">Поля обязательны для заполнения</small>
-
               <button class="knitting__button button" type="submit">Отправить заказ</button>
             </div>
           </div>
         </form>
-
       </div>
     </section>
 
@@ -200,7 +161,6 @@
 
   <footer class="page-footer">
     <div class="page-footer__wrapper">
-
       <div class="page-footer__logo">
         <a class="page-footer__logo-link" href="index.html" aria-label="Сайт HTML Academy.">
           <svg width="102" height="34" viewBox="0 0 102 34" aria-label="Логотип интернет-магазин: Мишка">
@@ -208,10 +168,8 @@
           </svg>
         </a>
       </div>
-
       <div class="page-footer__social divider divider--small">
         <ul class="page-footer__social-list">
-
           <li class="page-footer__social-item">
             <a class="page-footer__social-link" href="https://www.instagram.com/htmlacademy/" target="_blank" aria-label="Мы в Инстаграме">
               <svg width="23" height="22" viewBox="0 0 23 22">
@@ -233,10 +191,8 @@
               </svg>
             </a>
           </li>
-
         </ul>
       </div>
-
       <div class="page-footer__copyright">
         <div class="page-footer__copyright-wrapper">
           <b class="page-footer__copyright-text">Разработано</b>
@@ -244,11 +200,9 @@
             <svg width="27" height="34" viewBox="0 0 27 34" aria-label="Логотип HTML Academy.">
               <use xlink:href="img/sprite.svg#copyright"></use>
             </svg>
-
           </a>
         </div>
       </div>
-
     </div>
   </footer>
 

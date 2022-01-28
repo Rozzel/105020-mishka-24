@@ -22,9 +22,7 @@ function saveForms() {
     for (var i = 0, length = elements.length; i < length; i++) {
       (function (element) {
         var name = element.getAttribute("name");
-
         element.value = localStorage.getItem(name) || "";
-
         element.onkeyup = function () {
           localStorage.setItem(name, element.value);
         };
@@ -35,6 +33,7 @@ function saveForms() {
 
 function sliders() {
   let slider = document.querySelector(".slider");
+
   if (slider) {
     let btnNext = document.querySelector(".button-next");
     let btnPrev = document.querySelector(".button-prev");
@@ -43,6 +42,7 @@ function sliders() {
 
     btnNext.addEventListener("click", function () {
       ++i;
+      
       if (i >= slides.length) {
         slides[i - 1].classList.remove("reviews__item--on");
         i = 0;
@@ -55,6 +55,7 @@ function sliders() {
 
     btnPrev.addEventListener("click", function () {
       --i;
+
       if (i < 0) {
         i = slides.length - 1;
         slides[i - i].classList.remove("reviews__item--on");
